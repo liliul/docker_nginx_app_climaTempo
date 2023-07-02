@@ -1,0 +1,161 @@
+
+
+@mixin tempNow($gridArea) {
+    .tempNow {
+        // width: 480px;
+        height: 480px;
+        grid-area: $gridArea;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        background-image: var(--img-bg-tempNow);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+
+        .head-tempNow {
+            width: 100%;
+            height: 80px;
+
+
+            position: relative;
+
+            .nuvens {
+                width: 176px;
+                height: 176px;
+                background-image: var(--img-nuvem-tempNow);
+                background-repeat: no-repeat;
+               
+                background-size: contain;
+
+                position: absolute;
+                top: -56px;
+                left: -56px;
+
+                img {
+                    width: 176px;
+                    height: 176px;
+                }
+
+            }
+
+            .city {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                position: absolute;
+                top: 33px;
+                right: 32px;
+
+                .icon-city {
+                    svg {
+                        path {
+                            fill: var(--icon-head);
+                        }
+                    }
+                }
+
+                .text-city {
+                    color: var(--text-city);
+                    @include font-14;    
+                }
+            }
+        }
+
+
+        .main-tempNow {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .temperature {
+                margin-top: -6rem;
+                .div-temperature {
+                    width: 10.3rem;
+                    height: 10.6rem;
+
+                    .h1-temp {
+                        color: var(--h1-temp);
+                        margin: 0;
+                        padding: 0;
+
+                        @include font-88;
+
+                        display: flex;
+                        align-items: start;
+                        gap: 1rem;
+
+                        
+
+                        .span-temp {
+                            color: var(--span-temp);
+
+                            @include font-24;
+                        }
+                    }
+                }
+
+                .p-temp {
+                    color: var(--p-temp);
+
+                    @include font-20;
+
+                    text-align: center;
+
+                    .temp-b {
+                        color: var(--b-temp);
+                    }
+                }
+            }
+        }
+
+        
+
+        .foo-tempNow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;    
+          
+            gap: 1rem;
+
+            padding: 1rem;
+
+            .statistics {
+                // width: 14rem;
+                // height: 6rem;
+                
+                background-color: var(--bg-statistics);
+                border-radius: 6px;
+
+                display: flex;
+                align-items: center;
+                
+                gap: 1rem;
+                padding: 1rem;
+
+                .icon-statics {
+                    svg {
+                        path {
+                            fill: var(--icon-statics);
+                        }
+                    }
+                }
+
+                .info-statics {
+                    color: var(--info-statics);
+
+                    @include font-12;
+
+                    span {
+                        color: var(--info-span);
+
+                        
+                    }
+                }
+            }
+        }
+    }
+}

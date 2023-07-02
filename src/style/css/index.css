@@ -1,0 +1,1075 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap");
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.dracula {
+  --bg-input-search: #282A36;
+  --cor-font-input: #EFA554;
+  --focus-input: #9B6BDF;
+  --cor-placeholder-input: #E356A7;
+  --bg-button-search: #282A36;
+  --cor-button-search: #50FA7B;
+  --bg-button-search-hover: #282A36;
+  --boxShadow-input-search: #9B6BDF;
+  --visible-info-cor:#F1FA8C;
+  --visible-info2-cor: #E64747;
+  --openW-maps-h2-cor: #EFA554;
+  --img-bg: initial;
+  --img-bg-tempNow: initial;
+  --bg-color: #262626;
+  --bg-color-week: #282A36;
+  --shawdow-b-week: #9B6BDF;
+  --icon-head: #50FA7B;
+  --text-city: #E356A7;
+  --h1-temp: #F1FA8C;
+  --span-temp: #E4F34A;
+  --p-temp: #8BE9FD;
+  --b-temp: #E64747;
+  --bg-statistics: transparent;
+  --icon-statics: #EFA554;
+  --info-statics: #8BE9FD;
+  --span-info: #75D7EC;
+  --icon-air-sun: #50FA7B;
+  --head-air-sun: #E356A7;
+  --air-p-num: #42E66C;
+  --air-strong-info: #F1FA8C;
+  --icon-main-sun: #E64747;
+  --h3-days: #FFB86C;
+  --foo-p-days: #75D7EC;
+  --s-foo-days: #FF5555;
+  --foo-data-cor: #EFA554;
+  --styleCoords: #E64747;
+  --stylePCoords: #7A7A7A;
+}
+
+body.temaBlack {
+  --bg-input-search: #212121;
+  --cor-font-input: #FFF;
+  --focus-input: #FFFFFF;
+  --cor-placeholder-input: #FFF;
+  --bg-button-search: #212121;
+  --cor-button-search: #FFF;
+  --bg-button-search-hover: #212121;
+  --visible-info-cor:#FFF;
+  --visible-info2-cor: #DAD8F7;
+  --openW-maps-h2-cor: #FFFFFF;
+  --styleCoords: #FFF;
+  --stylePCoords: #DAD8F7;
+  --foo-data-cor: #FFF;
+  --img-bg:initial;
+  --img-bg-tempNow: initial;
+  --blur-bg: filter: blur(20px);
+  --bg-color: #000000f3;
+  --bg-color-week: #212121;
+  --shawdow-b-week: initial;
+  --icon-head: #FFFFFF;
+  --text-city: #FFFFFF;
+  --h1-temp: #FFFFFF;
+  --span-temp: #DAD8F7;
+  --p-temp: #FFFFFF;
+  --b-temp: #DAD8F7;
+  --bg-statistics: #07976c;
+  --icon-statics: white;
+  --info-statics: #FFFFFF;
+  --span-info: #DAD8F7;
+  --icon-air-sun: #FFFFFF;
+  --head-air-sun: #FFFFFF;
+  --air-p-num: #87EBCD;
+  --air-strong-info: #FFF;
+  --icon-main-sun: white;
+  --h3-days: #FFF;
+  --foo-p-days: #FFFFFF;
+  --s-foo-days:#DAD8F7;
+}
+
+body.massaRosa {
+  --bg-input-search: #855e6e;
+  --cor-font-input: #ffdbd7;
+  --focus-input: #ce7095;
+  --cor-placeholder-input: #f7f1e1;
+  --bg-button-search: #855e6e;
+  --cor-button-search: #f7f1e1;
+  --bg-button-search-hover: #855e6e;
+  --boxShadow-input-search: #ffdbd7;
+  --visible-info-cor:#ffb2c1;
+  --visible-info2-cor: #ce7095;
+  --openW-maps-h2-cor: #ffb2c1;
+  --styleCoords: #f7f1e1;
+  --stylePCoords: #ce7095;
+  --foo-data-cor: #ffb2c1;
+  --img-bg: initial;
+  --img-bg-tempNow: initial;
+  --blur-bg: filter: blur(20px);
+  --bg-color: #ce7095 ;
+  --bg-color-week: #855e6e;
+  --shawdow-b-week: #f7f1e1;
+  --icon-head: #ffdbd7;
+  --text-city: #ffdbd7;
+  --h1-temp: #f7f1e1;
+  --span-temp: #f7f1e1;
+  --p-temp: #f7f1e1;
+  --b-temp: #ffdbd7;
+  --bg-statistics: #ce7095;
+  --icon-statics: #ffdbd7;
+  --info-statics: #f7f1e1;
+  --span-info: #f7f1e1;
+  --icon-air-sun: #ffdbd7;
+  --head-air-sun: #ffdbd7;
+  --air-p-num: #ffb2c1;
+  --air-strong-info: #ce7095;
+  --icon-main-sun: #ffdbd7;
+  --h3-days: #ffb2c1;
+  --foo-p-days: #f7f1e1;
+  --s-foo-days:#ffdbd7;
+}
+
+body.sorvete {
+  --bg-input-search: #05a1ad;
+  --cor-font-input: #4e031e;
+  --focus-input: #5a4c6e;
+  --cor-placeholder-input: #4e031e;
+  --bg-button-search: #05a1ad;
+  --cor-button-search: #4e031e;
+  --bg-button-search-hover: #05a1ad;
+  --visible-info-cor:#5a4c6e;
+  --visible-info2-cor: #4e031e;
+  --openW-maps-h2-cor: #5a4c6e;
+  --styleCoords: #5a4c6e;
+  --stylePCoords: #5d2d4e;
+  --foo-data-cor: #5d2d4e;
+  --img-bg: initial;
+  --img-bg-tempNow: initial;
+  --blur-bg: filter: blur(20px);
+  --bg-color: #E7E6FB;
+  --bg-color-week: #05a1ad;
+  --shawdow-b-week: initial;
+  --icon-head: #4e031e;
+  --text-city: #5a4c6e;
+  --h1-temp: #5a4c6e;
+  --span-temp: #5d2d4e;
+  --p-temp: #5a4c6e;
+  --b-temp: #4e031e;
+  --bg-statistics: #447390;
+  --icon-statics: #5d2d4e;
+  --info-statics: #4e031e;
+  --span-info: #4e031e;
+  --icon-air-sun: #4e031e;
+  --head-air-sun: #5a4c6e;
+  --air-p-num: #4e031e;
+  --air-strong-info: #5a4c6e;
+  --icon-main-sun: #4e031e;
+  --h3-days: #5d2d4e;
+  --foo-p-days: #4e031e;
+  --s-foo-days:#5a4c6e;
+}
+
+body.geleia {
+  --bg-input-search: #ef3353;
+  --cor-font-input: #f4b036;
+  --focus-input: #f17144;
+  --cor-placeholder-input: #f4b036;
+  --bg-button-search: #ef3353;
+  --cor-button-search: #f4b036;
+  --bg-button-search-hover: #ef3353;
+  --boxShadow-input-search: #f4b036;
+  --visible-info-cor:#723e4e;
+  --visible-info2-cor: #b03851;
+  --openW-maps-h2-cor: #723e4e;
+  --styleCoords: #723e4e;
+  --stylePCoords: #b03851;
+  --foo-data-cor: #723e4e;
+  --img-bg: url("../../assets/Background.png");
+  --img-bg-tempNow: initial;
+  --blur-bg: filter: blur(20px);
+  --bg-color: #6D67D0;
+  --bg-color-week: #ef3353;
+  --shawdow-b-week: #f4b036;
+  --img-nuvem-tempNow: initial;
+  --icon-head: #f4b036;
+  --text-city: #f4b036;
+  --h1-temp: #723e4e;
+  --span-temp: #b03851;
+  --p-temp: #723e4e;
+  --b-temp: #b03851;
+  --bg-statistics: #f4b036;
+  --icon-statics: #b03851;
+  --info-statics: #b03851;
+  --span-info: ;
+  --icon-air-sun: #f4b036;
+  --head-air-sun: #f4b036;
+  --air-p-num: #f17144;
+  --air-strong-info: #723e4e;
+  --icon-main-sun: #f4b036;
+  --h3-days: #723e4e;
+  --foo-p-days: #f4b036;
+  --s-foo-days:#f17144;
+}
+
+:root {
+  --bg-input-search: #6D67D0;
+  --cor-font-input: #FFFFFF;
+  --focus-input: #FFFFFF;
+  --cor-placeholder-input: #FFF;
+  --bg-button-search: rgb(102 96 200 / 80%);
+  --cor-button-search: #FFF;
+  --bg-button-search-hover: rgb(102 96 200 / 30%);
+  --visible-info-cor:#FFF;
+  --visible-info2-cor: #E7E6FB;
+  --openW-maps-h2-cor: #FFF;
+  --styleCoords: #FFF;
+  --stylePCoords: #E7E6FB;
+  --foo-data-cor: #DAD8F7;
+  --img-bg: url("../../assets/Background.png");
+  --blur-bg: filter: blur(20px);
+  --bg-color: initial;
+  --bg-color-week: #6D67D0;
+  --shawdow-b-week: initial;
+  --icon-head: #FFF;
+  --text-city: #FFF;
+  --h1-temp: #FFFFFF;
+  --span-temp: #DAD8F7;
+  --p-temp: #FFFFFF;
+  --b-temp: #DAD8F7;
+  --bg-statistics: rgba(102, 96, 200, 0.6);
+  --icon-statics: white;
+  --info-statics: #FFFFFF;
+  --span-info: #DAD8F7;
+  --icon-air-sun: #DAD8F7;
+  --head-air-sun: #E7E6FB;
+  --air-p-num: #87EBCD;
+  --air-strong-info: #E7E6FB;
+  --icon-main-sun: white;
+  --h3-days: #DAD8F7;
+  --foo-p-days: #FFFFFF;
+  --s-foo-days:#DAD8F7;
+}
+
+body {
+  background-image: var(--img-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  background-color: var(--bg-color);
+  margin-bottom: 3rem;
+}
+
+.container .weekWeather .days .h-days .h3-days {
+  font-family: "Fira Code", monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.selectTheme {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 2.2rem;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.selectTheme .iconTheme {
+  width: 22px;
+  height: 22px;
+}
+.selectTheme #select {
+  height: 100%;
+  background-color: #212121;
+  color: #DDD;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-family: "Fira Code", monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 3px 3px;
+}
+.selectTheme #select option {
+  font-family: "Fira Code", monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 3px 0px;
+  border: none;
+  outline: none;
+}
+
+.container .week {
+  background-color: var(--bg-color-week);
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px var(--shawdow-b-week);
+}
+
+.searchCity {
+  width: 100%;
+  height: 10.1rem;
+  margin: 2rem 0rem 3rem 0rem;
+  display: grid;
+  place-items: center;
+}
+.searchCity .c-input-button {
+  display: flex;
+  gap: 1.5rem;
+}
+.searchCity .c-input-button .input #input-search-city {
+  width: 100%;
+  height: 4.5rem;
+  padding: 1.4rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0.2rem 0.2rem 1rem var(--boxShadow-input-search);
+  outline: none;
+  color: var(--cor-font-input);
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: var(--bg-input-search);
+}
+.searchCity .c-input-button .input #input-search-city::placeholder {
+  color: var(--cor-placeholder-input);
+  font-weight: bold;
+}
+.searchCity .c-input-button .input #input-search-city:focus {
+  border: 2px solid var(--focus-input);
+}
+.searchCity .c-input-button #button-search-city {
+  outline: none;
+  border: none;
+  box-shadow: 0.2rem 0.2rem 1rem var(--boxShadow-input-search);
+  background-color: var(--bg-button-search);
+  height: 4.5rem;
+  padding: 0rem 3rem;
+  font-weight: bold;
+  color: var(--cor-button-search);
+}
+.searchCity .c-input-button #button-search-city:hover {
+  transform: scale(0.9);
+  background-color: var(--bg-button-search-hover);
+}
+
+@media screen and (min-width: 880px) {
+  .searchCity {
+    width: 100%;
+    height: 10.1rem;
+    display: grid;
+    place-items: center;
+  }
+  .searchCity .c-input-button {
+    display: flex;
+    gap: 1rem;
+  }
+  .searchCity .c-input-button .input #input-search-city {
+    width: 55rem;
+    height: 4.5rem;
+    padding: 1.4rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0.2rem 0.2rem 1rem var(--boxShadow-input-search);
+    outline: none;
+    color: var(--cor-font-input);
+    background-color: var(--bg-input-search);
+  }
+  .searchCity .c-input-button .input #input-search-city::placeholder {
+    color: var(--cor-placeholder-input);
+    font-weight: bold;
+  }
+  .searchCity .c-input-button .input #input-search-city:focus {
+    border: 2px solid var(--focus-input);
+  }
+  .searchCity .c-input-button #button-search-city {
+    outline: none;
+    border: none;
+    box-shadow: 0.2rem 0.2rem 1rem var(--boxShadow-input-search);
+    background-color: var(--bg-button-search);
+    height: 4.5rem;
+    padding: 0rem 3rem;
+    font-weight: bold;
+    color: var(--cor-button-search);
+  }
+  .searchCity .c-input-button #button-search-city:hover {
+    transform: scale(0.9);
+    background-color: var(--bg-button-search-hover);
+  }
+}
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 2.5rem;
+}
+.container .tempNow {
+  height: 480px;
+  grid-area: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: var(--img-bg-tempNow);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+.container .tempNow .head-tempNow {
+  width: 100%;
+  height: 80px;
+  position: relative;
+}
+.container .tempNow .head-tempNow .nuvens {
+  width: 176px;
+  height: 176px;
+  background-image: var(--img-nuvem-tempNow);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -56px;
+  left: -56px;
+}
+.container .tempNow .head-tempNow .nuvens img {
+  width: 176px;
+  height: 176px;
+}
+.container .tempNow .head-tempNow .city {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 33px;
+  right: 32px;
+}
+.container .tempNow .head-tempNow .city .icon-city svg path {
+  fill: var(--icon-head);
+}
+.container .tempNow .head-tempNow .city .text-city {
+  color: var(--text-city);
+  font-family: "Fira Code", monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.container .tempNow .main-tempNow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container .tempNow .main-tempNow .temperature {
+  margin-top: -6rem;
+}
+.container .tempNow .main-tempNow .temperature .div-temperature {
+  width: 10.3rem;
+  height: 10.6rem;
+}
+.container .tempNow .main-tempNow .temperature .div-temperature .h1-temp {
+  color: var(--h1-temp);
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Code", monospace;
+  font-weight: 700;
+  font-size: 8.8rem;
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}
+.container .tempNow .main-tempNow .temperature .div-temperature .h1-temp .span-temp {
+  color: var(--span-temp);
+  font-family: "Fira Code", monospace;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+.container .tempNow .main-tempNow .temperature .p-temp {
+  color: var(--p-temp);
+  font-family: "Fira Code", monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
+.container .tempNow .main-tempNow .temperature .p-temp .temp-b {
+  color: var(--b-temp);
+}
+.container .tempNow .foo-tempNow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.container .tempNow .foo-tempNow .statistics {
+  background-color: var(--bg-statistics);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.container .tempNow .foo-tempNow .statistics .icon-statics svg path {
+  fill: var(--icon-statics);
+}
+.container .tempNow .foo-tempNow .statistics .info-statics {
+  color: var(--info-statics);
+  font-family: "Fira Code", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.container .tempNow .foo-tempNow .statistics .info-statics span {
+  color: var(--info-span);
+}
+.container .airQuality {
+  grid-area: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .airQuality .head-air {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3.4rem;
+}
+.container .airQuality .head-air .icon-air svg path {
+  fill: var(--icon-air-sun);
+}
+.container .airQuality .head-air .h2-air {
+  font-family: "Fira Code", monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--head-air-sun);
+}
+.container .airQuality .main-air {
+  margin: 1.9rem 0rem;
+}
+.container .airQuality .main-air .p-main-air {
+  font-family: "Fira Code", monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--air-p-num);
+}
+.container .airQuality .main-air .stg-main-air {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4rem;
+  color: var(--air-strong-info);
+}
+.container .airQuality .numbers-air {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.container .airQuality .numbers-air .info-num {
+  margin-bottom: 1rem;
+}
+.container .airQuality .numbers-air .info-num .p-info-num {
+  font-family: "Fira Code", monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--air-p-num);
+}
+.container .airQuality .numbers-air .info-num .span-info-num {
+  text-align: center;
+  color: var(--air-strong-info);
+  font-family: "Fira Code", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.container .openWeather-maps {
+  grid-area: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .openWeather-maps .maps-h2 {
+  font-family: "Fira Code", monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--openW-maps-h2-cor);
+}
+.container .visible {
+  grid-area: unset;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container .visible .head-sun {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3.4rem;
+}
+.container .visible .head-sun .icon-sun svg path {
+  fill: var(--icon-air-sun);
+}
+.container .visible .head-sun .h2-sun {
+  font-family: "Fira Code", monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--head-air-sun);
+}
+.container .visible #visible {
+  margin-bottom: 1.2rem;
+}
+.container .visible #visible .visible-content {
+  width: 100%;
+  height: 100%;
+  margin-top: 3rem;
+  text-align: center;
+}
+.container .visible #visible .visible-content .visible-info {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4rem;
+  color: var(--visible-info-cor);
+}
+.container .visible #visible .visible-content .visible-info2 {
+  margin: 1.9rem 0rem 1.3rem 0rem;
+  font-family: "Fira Code", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--visible-info2-cor);
+}
+.container .sunTime {
+  grid-area: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .sunTime .head-sun {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3.4rem;
+}
+.container .sunTime .head-sun .icon-sun svg path {
+  fill: var(--icon-air-sun);
+}
+.container .sunTime .head-sun .h2-sun {
+  font-family: "Fira Code", monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--head-air-sun);
+}
+.container .sunTime .main-sun {
+  margin-bottom: 1rem;
+}
+.container .sunTime .main-sun svg .icon-main-sun {
+  fill: var(--icon-main-sun);
+}
+.container .sunTime .main-sun .sectionTime {
+  display: flex;
+  justify-content: space-between;
+}
+.container .sunTime .main-sun .sectionTime .sttleDivCoords {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.container .sunTime .main-sun .sectionTime .sttleDivCoords .styleCoords {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--styleCoords);
+}
+.container .sunTime .main-sun .sectionTime .sttleDivCoords .stylePCoords {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--stylePCoords);
+}
+.container .weekWeather {
+  grid-area: unset;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  place-items: center;
+  padding: 2rem 0.5rem;
+}
+.container .weekWeather .days {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  margin: 1rem 0rem;
+}
+.container .weekWeather .days .h-days .h3-days {
+  color: var(--h3-days);
+}
+.container .weekWeather .days .main-days {
+  margin: 0.5rem 0rem;
+}
+.container .weekWeather .days .foo-days .foo-p-days {
+  font-family: "Fira Code", monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--foo-p-days);
+}
+.container .weekWeather .days .foo-days .foo-p-days .s-foo-days {
+  font-family: "Fira Code", monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--s-foo-days);
+}
+.container .weekWeather .days .foo-data {
+  font-family: "Fira Code", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--foo-data-cor);
+  margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 880px) {
+  .container {
+    max-width: 1366px;
+    height: auto;
+    display: grid;
+    grid-template-areas: "tempNow air maps" "tempNow visible sun" "week week week";
+    place-content: center center;
+    gap: 22px;
+    padding: 0px 132px;
+    margin: 0 auto;
+  }
+  .container .tempNow {
+    height: 480px;
+    grid-area: tempNow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: var(--img-bg-tempNow);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+  .container .tempNow .head-tempNow {
+    width: 100%;
+    height: 80px;
+    position: relative;
+  }
+  .container .tempNow .head-tempNow .nuvens {
+    width: 176px;
+    height: 176px;
+    background-image: var(--img-nuvem-tempNow);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: -56px;
+    left: -56px;
+  }
+  .container .tempNow .head-tempNow .nuvens img {
+    width: 176px;
+    height: 176px;
+  }
+  .container .tempNow .head-tempNow .city {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 33px;
+    right: 32px;
+  }
+  .container .tempNow .head-tempNow .city .icon-city svg path {
+    fill: var(--icon-head);
+  }
+  .container .tempNow .head-tempNow .city .text-city {
+    color: var(--text-city);
+    font-family: "Fira Code", monospace;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  .container .tempNow .main-tempNow {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .container .tempNow .main-tempNow .temperature {
+    margin-top: -6rem;
+  }
+  .container .tempNow .main-tempNow .temperature .div-temperature {
+    width: 10.3rem;
+    height: 10.6rem;
+  }
+  .container .tempNow .main-tempNow .temperature .div-temperature .h1-temp {
+    color: var(--h1-temp);
+    margin: 0;
+    padding: 0;
+    font-family: "Fira Code", monospace;
+    font-weight: 700;
+    font-size: 8.8rem;
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+  }
+  .container .tempNow .main-tempNow .temperature .div-temperature .h1-temp .span-temp {
+    color: var(--span-temp);
+    font-family: "Fira Code", monospace;
+    font-weight: 700;
+    font-size: 2.4rem;
+  }
+  .container .tempNow .main-tempNow .temperature .p-temp {
+    color: var(--p-temp);
+    font-family: "Fira Code", monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .container .tempNow .main-tempNow .temperature .p-temp .temp-b {
+    color: var(--b-temp);
+  }
+  .container .tempNow .foo-tempNow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .container .tempNow .foo-tempNow .statistics {
+    background-color: var(--bg-statistics);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .container .tempNow .foo-tempNow .statistics .icon-statics svg path {
+    fill: var(--icon-statics);
+  }
+  .container .tempNow .foo-tempNow .statistics .info-statics {
+    color: var(--info-statics);
+    font-family: "Fira Code", monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  .container .tempNow .foo-tempNow .statistics .info-statics span {
+    color: var(--info-span);
+  }
+  .container .airQuality {
+    grid-area: air;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .container .airQuality .head-air {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3.4rem;
+  }
+  .container .airQuality .head-air .icon-air svg path {
+    fill: var(--icon-air-sun);
+  }
+  .container .airQuality .head-air .h2-air {
+    font-family: "Fira Code", monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--head-air-sun);
+  }
+  .container .airQuality .main-air {
+    margin: 1.9rem 0rem;
+  }
+  .container .airQuality .main-air .p-main-air {
+    font-family: "Fira Code", monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--air-p-num);
+  }
+  .container .airQuality .main-air .stg-main-air {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4rem;
+    color: var(--air-strong-info);
+  }
+  .container .airQuality .numbers-air {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .container .airQuality .numbers-air .info-num {
+    margin-bottom: 1rem;
+  }
+  .container .airQuality .numbers-air .info-num .p-info-num {
+    font-family: "Fira Code", monospace;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--air-p-num);
+  }
+  .container .airQuality .numbers-air .info-num .span-info-num {
+    text-align: center;
+    color: var(--air-strong-info);
+    font-family: "Fira Code", monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  .container .openWeather-maps {
+    grid-area: maps;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container .openWeather-maps .maps-h2 {
+    font-family: "Fira Code", monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--openW-maps-h2-cor);
+  }
+  .container .visible {
+    grid-area: visible;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .container .visible .head-sun {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3.4rem;
+  }
+  .container .visible .head-sun .icon-sun svg path {
+    fill: var(--icon-air-sun);
+  }
+  .container .visible .head-sun .h2-sun {
+    font-family: "Fira Code", monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--head-air-sun);
+  }
+  .container .visible #visible {
+    margin-bottom: 1.2rem;
+  }
+  .container .visible #visible .visible-content {
+    width: 100%;
+    height: 100%;
+    margin-top: 3rem;
+    text-align: center;
+  }
+  .container .visible #visible .visible-content .visible-info {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4rem;
+    color: var(--visible-info-cor);
+  }
+  .container .visible #visible .visible-content .visible-info2 {
+    margin: 1.9rem 0rem 1.3rem 0rem;
+    font-family: "Fira Code", monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--visible-info2-cor);
+  }
+  .container .sunTime {
+    grid-area: sun;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .container .sunTime .head-sun {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3.4rem;
+  }
+  .container .sunTime .head-sun .icon-sun svg path {
+    fill: var(--icon-air-sun);
+  }
+  .container .sunTime .head-sun .h2-sun {
+    font-family: "Fira Code", monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--head-air-sun);
+  }
+  .container .sunTime .main-sun {
+    margin-bottom: 1rem;
+  }
+  .container .sunTime .main-sun svg .icon-main-sun {
+    fill: var(--icon-main-sun);
+  }
+  .container .sunTime .main-sun .sectionTime {
+    display: flex;
+    justify-content: space-between;
+  }
+  .container .sunTime .main-sun .sectionTime .sttleDivCoords {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  .container .sunTime .main-sun .sectionTime .sttleDivCoords .styleCoords {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--styleCoords);
+  }
+  .container .sunTime .main-sun .sectionTime .sttleDivCoords .stylePCoords {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--stylePCoords);
+  }
+  .container .weekWeather {
+    grid-area: week;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    place-items: center;
+    padding: 2rem 0.5rem;
+  }
+  .container .weekWeather .days {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin: 1rem 0rem;
+  }
+  .container .weekWeather .days .h-days .h3-days {
+    color: var(--h3-days);
+  }
+  .container .weekWeather .days .main-days {
+    margin: 0.5rem 0rem;
+  }
+  .container .weekWeather .days .foo-days .foo-p-days {
+    font-family: "Fira Code", monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--foo-p-days);
+  }
+  .container .weekWeather .days .foo-days .foo-p-days .s-foo-days {
+    font-family: "Fira Code", monospace;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--s-foo-days);
+  }
+  .container .weekWeather .days .foo-data {
+    font-family: "Fira Code", monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--foo-data-cor);
+    margin-top: 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

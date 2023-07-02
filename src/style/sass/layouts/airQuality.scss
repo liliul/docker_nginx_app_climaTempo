@@ -1,0 +1,67 @@
+@mixin airQuality($gridArea) {
+    .airQuality {
+        grid-area: $gridArea;
+
+        @include flexEixoY;
+
+        .head-air {
+            @include flexEixoX;
+
+            .icon-air {
+                svg {
+                    path {
+                        fill: var(--icon-air-sun);
+                    }
+                }
+            }
+            
+
+            .h2-air {
+                @include font-16;
+
+                color: var(--head-air-sun);
+            }
+        }
+
+
+        .main-air {
+            margin: 1.9rem 0rem;
+                
+            .p-main-air {
+                @include font-18;
+
+                color: var(--air-p-num);
+            }
+
+            .stg-main-air {
+                @include font-40;
+
+                color: var(--air-strong-info);
+            }
+        }
+
+        .numbers-air {
+            width: 100%;
+
+            display: flex;
+            justify-content: space-around;
+            
+
+            .info-num {
+                margin-bottom: 1rem;
+
+                .p-info-num {
+                    @include font-14;
+
+                    color: var(--air-p-num);
+                }
+                .span-info-num {
+                    text-align: center;
+                    color: var(--air-strong-info);
+
+                    @include font-12;
+                }
+            }
+        }
+    }
+}

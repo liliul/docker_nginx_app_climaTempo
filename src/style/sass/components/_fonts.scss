@@ -1,0 +1,62 @@
+$fontFira: 'Fira Code', monospace;
+
+%font-clear {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+@mixin font-12 {
+    font-family: $fontFira;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+@mixin font-14 {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+@mixin font-16 {
+    font-family: $fontFira;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+@mixin font-18 {
+    font-family: $fontFira;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+@mixin font-20 {
+    font-family: $fontFira;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+@mixin font-24 {
+    font-family: $fontFira;
+    font-weight: 700;
+    font-size: 2.4rem;
+    
+}
+
+@mixin font-40 {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+@mixin font-88 {
+    font-family: $fontFira;
+    font-weight: 700;
+    font-size: 8.8rem;
+    
+}

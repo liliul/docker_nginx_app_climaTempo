@@ -1,0 +1,56 @@
+@mixin weekWeather($gridArea) {
+    .weekWeather {
+        grid-area: $gridArea;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        place-items: center;
+
+        padding: 2rem .5rem;
+
+        .days {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            height: auto;
+
+            margin: 1rem 0rem;
+
+            .h-days {
+
+                .h3-days {
+                    @extend %font-clear;
+
+                    color: var(--h3-days);
+                }
+            }
+
+            .main-days {
+                margin: .5rem 0rem;
+            }
+
+            .foo-days {
+
+                .foo-p-days {
+                    @include font-16;
+
+                    color: var(--foo-p-days);
+
+                    .s-foo-days {
+                        @include font-14;
+                        color: var(--s-foo-days);
+                    }
+                }
+                
+            }
+
+            .foo-data {
+                @include font-12;
+
+                color: var(--foo-data-cor);
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}

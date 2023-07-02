@@ -1,0 +1,73 @@
+@import './dracula.scss';
+@import './temaBlack.scss';
+@import './massaRosa.scss';
+@import './sorvete.scss';
+@import './geleia.scss';
+
+:root {
+    --bg-input-search: #6D67D0;
+    --cor-font-input: #FFFFFF;
+    --focus-input: #FFFFFF;
+    --cor-placeholder-input: #FFF;
+    --bg-button-search: rgb(102 96 200 / 80%);
+    --cor-button-search: #FFF;
+    --bg-button-search-hover: rgb(102 96 200 / 30%);
+
+    --visible-info-cor:#FFF;
+    --visible-info2-cor: #E7E6FB;
+
+    --openW-maps-h2-cor: #FFF;
+
+    --styleCoords: #FFF;
+    --stylePCoords: #E7E6FB;
+
+    --foo-data-cor: #DAD8F7;
+
+    --img-bg: url('../../assets/Background.png');
+    // --img-bg-tempNow: url('../../assets/bgnuvem.jpg');
+    --blur-bg: filter: blur(20px);
+
+    --bg-color: initial;
+    --bg-color-week: #6D67D0; 
+
+    --shawdow-b-week: initial;
+
+    // --img-nuvem-tempNow: url('../../assets/nuvens.svg');
+    --icon-head: #FFF;
+
+    --text-city: #FFF;
+
+    --h1-temp: #FFFFFF;
+    --span-temp: #DAD8F7;
+    --p-temp: #FFFFFF;
+    --b-temp: #DAD8F7;
+    --bg-statistics: rgba(102, 96, 200, 0.6);
+    --icon-statics: white;
+    --info-statics: #FFFFFF;
+    --span-info: #DAD8F7;
+
+    --icon-air-sun: #DAD8F7;
+    --head-air-sun: #E7E6FB;
+
+    --air-p-num: #87EBCD;
+    --air-strong-info: #E7E6FB;
+
+    --icon-main-sun: white;
+
+    --h3-days: #DAD8F7;
+    --foo-p-days: #FFFFFF;
+    --s-foo-days:#DAD8F7;
+}
+
+
+body {
+    background-image: var(--img-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+
+    background-color: var(--bg-color);
+
+    margin-bottom: 3rem;
+}

@@ -1,0 +1,65 @@
+
+
+.container {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
+    gap: 2.5rem;
+    padding: 2.5rem;
+
+    .week {
+        @extend %week;
+    }
+
+    @include tempNow(unset);      
+
+    @include airQuality(unset);
+
+    @include openWeather-maps(unset);
+
+    @include visible(unset);
+
+    @include sunTime(unset);
+
+    @include weekWeather(unset);
+}
+
+
+@media screen and (min-width: 880px) {
+    .container {
+        max-width: 1366px;
+        height: auto;
+
+        display: grid;
+        grid-template-areas: 
+            "tempNow air maps"
+            "tempNow visible sun"
+            "week week week"
+        ;
+        
+        place-content: center center;
+        gap: 22px;
+        padding: 0px 132px;
+
+        margin: 0 auto;
+
+        .week {
+            @extend %week;
+        }
+
+       @include tempNow(tempNow);
+
+       @include airQuality(air);
+
+       @include openWeather-maps(maps);
+
+       @include visible(visible);
+
+       @include sunTime(sun);
+
+       @include weekWeather(week);
+
+    }
+}

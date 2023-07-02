@@ -1,0 +1,14 @@
+@mixin openWeather-maps($gridArea) {
+    .openWeather-maps {
+        grid-area: $gridArea;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .maps-h2 {
+            @include font-20;
+            color: var(--openW-maps-h2-cor);
+        }
+    }       
+}

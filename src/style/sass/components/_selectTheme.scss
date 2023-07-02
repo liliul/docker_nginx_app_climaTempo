@@ -1,0 +1,38 @@
+.selectTheme {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    height: 2.2rem;
+
+    position: absolute;
+    top: 10px;
+    right: 20px;
+
+    .iconTheme {
+        width: 22px;
+        height: 22px;
+    }
+
+    #select {
+        height: 100%;
+        background-color: #212121;
+        color: #DDD;
+
+        border: none;
+        border-radius: 5px;
+        outline: none;
+
+        @include font-14;  
+
+        padding: 3px 3px; 
+
+        option {
+            @include font-14;
+
+            padding: 3px 0px;
+            border: none;
+            outline: none;
+        }
+    }
+}

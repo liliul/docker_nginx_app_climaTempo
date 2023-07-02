@@ -1,0 +1,52 @@
+@mixin visible($gridArea) {
+    .visible {
+        grid-area: $gridArea;
+
+        // @include flexEixoY;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .head-sun {
+            @include flexEixoX;
+
+            .icon-sun {
+                svg {
+                    path {
+                        fill: var(--icon-air-sun)
+                    }
+                }
+            }
+
+            .h2-sun {
+                @include font-16;
+
+                color: var(--head-air-sun);
+            }
+        }
+
+        #visible {
+            margin-bottom: 1.2rem;
+
+            .visible-content {
+                width: 100%;
+                height: 100%;
+
+                margin-top: 3rem;
+                text-align: center;
+
+                .visible-info {
+                    @include font-40;
+                    color: var(--visible-info-cor);
+                }
+                .visible-info2 {
+                    margin: 1.9rem 0rem 1.3rem 0rem;
+
+                    @include font-12;
+                    color: var(--visible-info2-cor);
+                }
+            }
+            
+        }
+    }
+}

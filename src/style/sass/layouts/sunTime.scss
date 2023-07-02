@@ -1,0 +1,59 @@
+@mixin sunTime($gridArea) {
+    .sunTime {
+        grid-area: $gridArea;
+
+        @include flexEixoY;
+
+        .head-sun {
+            @include flexEixoX;
+
+            .icon-sun {
+                svg {
+                    path {
+                        fill: var(--icon-air-sun)
+                    }
+                }
+            }
+
+            .h2-sun {
+                @include font-16;
+
+                color: var(--head-air-sun);
+            }
+        }
+
+        .main-sun {
+            margin-bottom: 1rem;
+
+            svg {
+                .icon-main-sun {
+                    fill: var(--icon-main-sun);
+                }
+            }
+
+            .sectionTime {
+                display:flex;
+                justify-content: space-between;
+                
+                .sttleDivCoords {
+                    display:flex;
+                    align-items:center;
+                    gap:2px;
+                    
+                    .styleCoords {
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 1.4rem;
+                        color: var(--styleCoords);
+                    }
+                    .stylePCoords { 
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 1rem;
+                        color: var(--stylePCoords);
+                    }
+                }
+            }
+        }
+    }
+}

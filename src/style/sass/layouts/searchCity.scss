@@ -1,0 +1,127 @@
+
+.searchCity {
+    width: 100%;
+    height: 10.1rem;
+    
+    margin: 2rem 0rem 3rem 0rem;
+
+    display: grid;
+    place-items: center;
+    
+    .c-input-button {
+        display: flex;
+        gap: 1.5rem;
+
+        .input {
+
+
+            #input-search-city {
+                width: 100%;
+                height: 4.5rem;
+                padding: 1.4rem;
+
+                border: none;
+                border-radius: 5px;
+                box-shadow: .2rem .2rem 1rem var(--boxShadow-input-search);
+                outline: none;
+                color: var(--cor-font-input);
+                font-size: 1.4rem;
+                font-weight: bold;
+
+                background-color: var(--bg-input-search);
+
+                &::placeholder {
+                    color: var(--cor-placeholder-input);
+                    font-weight: bold;
+                }
+
+                &:focus {
+                    border: 2px solid var(--focus-input);
+                }
+                
+            }
+
+        }
+        #button-search-city {
+            outline: none;
+            border: none;
+            box-shadow: .2rem .2rem 1rem var(--boxShadow-input-search);
+            background-color: var(--bg-button-search);
+
+            height: 4.5rem;
+            padding: 0rem 3rem;
+
+            font-weight: bold;
+            color: var(--cor-button-search);
+
+            &:hover {
+                transform: scale(.9);
+                background-color: var(--bg-button-search-hover);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 880px) {
+
+    .searchCity {
+        width: 100%;
+        height: 10.1rem;
+        
+        // @include flexEixoY;
+        display: grid;
+        place-items: center;
+        
+        .c-input-button {
+
+            display: flex;
+            gap: 1rem;
+
+            .input {
+
+
+                #input-search-city {
+                    width: 55rem;
+                    height: 4.5rem;
+                    padding: 1.4rem;
+
+                    border: none;
+                    border-radius: 5px;
+                    box-shadow: .2rem .2rem 1rem var(--boxShadow-input-search);
+                    outline: none;
+                    color: var(--cor-font-input);
+
+                    background-color: var(--bg-input-search);
+
+                    &::placeholder {
+                        color: var(--cor-placeholder-input);
+                        font-weight: bold;
+                    }
+
+                    &:focus {
+                        border: 2px solid var(--focus-input);
+                    }
+                    
+                }
+
+            }
+            #button-search-city {
+                outline: none;
+                border: none;
+                box-shadow: .2rem .2rem 1rem var(--boxShadow-input-search);
+                background-color: var(--bg-button-search);
+
+                height: 4.5rem;
+                padding: 0rem 3rem;
+
+                font-weight: bold;
+                color: var(--cor-button-search);
+
+                &:hover {
+                    transform: scale(.9);
+                    background-color: var(--bg-button-search-hover);
+                }
+            }
+        }
+    }
+}
