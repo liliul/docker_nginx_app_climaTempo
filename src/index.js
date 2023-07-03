@@ -1,3 +1,5 @@
+import './style/css/index.css';
+
 import './hook/themes.js';
 
 import './hook/api.js';
