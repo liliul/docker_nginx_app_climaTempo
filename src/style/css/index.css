@@ -227,6 +227,7 @@ body.geleia {
   --stylePCoords: #E7E6FB;
   --foo-data-cor: #DAD8F7;
   --img-bg: url("../../assets/Background.png");
+  --img-bg-tempNow: url("../../assets/bgnuvem.jpg");
   --blur-bg: filter: blur(20px);
   --bg-color: initial;
   --bg-color-week: #6D67D0;
