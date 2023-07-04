@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "sass -w src/style/sass/index.scss:src/style/css/index.css & live-server --no-browser",
-    "webpack": "webpack --watch"
+    "webpack": "webpack --watch",
+    "wpack": "webpack"
   },
   "keywords": [],
   "author": "",
