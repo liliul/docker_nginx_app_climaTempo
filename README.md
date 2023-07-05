@@ -2,6 +2,13 @@
 
 ### Iniciando o projeto
 
+Versão do nodejs .nvmrc
+
+Usando .nvmrc: 
+```zsh
+	nvm use
+```
+
 Clonar o repositorio: 
 ```bash
 	git clone https://github.com/liliul/docker_nginx_app_climaTempo.git
