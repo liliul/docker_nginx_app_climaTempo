@@ -16,6 +16,14 @@ Usar .nvmrc:
 nvm use
 ```
 
+##### Usando yarn para instalar os pacotes nodejs
+
+Usar o comando:
+
+```zsh
+yarn
+```
+
 Para criar o bundle webpack e criar container docker do nginx e transferir a pasta dist do bundle do webpack na pasta html do nginx
 
 Camando bash:
