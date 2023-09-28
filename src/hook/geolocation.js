@@ -31,5 +31,5 @@ async function getApis(lat, lon) {
   visible(resApi1)
   sunTime(resApi1)   
   openWeatherMap(resApi1)
-  weather(reqApi3)
+  weather(resApi3)
 }
