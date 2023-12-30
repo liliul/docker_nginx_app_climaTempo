@@ -1,4 +1,4 @@
-export function byId(id){
+export function byId(id) {
     return document.getElementById(id)
 }
 
@@ -11,10 +11,14 @@ export function visibility(visible) {
 }
 
 export function timeStamp(codigo, timezone) {
-    const data = new Date((timezone + codigo) *1000);
-    
+    const data = new Date((timezone + codigo) * 1000);
+
     const h = data.getUTCHours();
     const m = data.getUTCMinutes();
-    
+
     return `${h}:${m}`;
+}
+
+export function convertWindSpeedKm(ms) {
+    return ms * 3.6;
 }
