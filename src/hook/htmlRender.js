@@ -146,7 +146,7 @@ export function weather(res) {
             </section>
 
             <footer class="foo-days">
-                <p class="foo-p-days">${list.main.temp_max.toFixed()}° <span class="s-foo-days">${list.main.temp_min.toFixed()}°</span></p>
+                <p class="foo-p-days">${list.main.temp_max.toFixed()}° <span class="s-foo-days">${convertWindSpeedKm(list.wind.speed).toFixed()}km/h</span></p>
             </footer>
             <small class="foo-data">${list.dt_txt}</small>
         `
