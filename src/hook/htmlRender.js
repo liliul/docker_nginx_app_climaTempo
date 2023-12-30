@@ -1,18 +1,18 @@
-import { kelvinCelsius, visibility, byId, timeStamp } from './utils.js';
+import { kelvinCelsius, visibility, byId, timeStamp, convertWindSpeedKm } from './utils.js';
 
 export function tempNow(res) {
-    
+
     byId('iconTempNow').innerHTML = `
         <img src="./src/assets/iconsTemp/${res.weather[0].icon}.svg" />
     `;
 
     const cityLocate = document.getElementById('cityLocate');
-    const temp       = document.getElementById('temp');
+    const temp = document.getElementById('temp');
     const tempMaxMix = document.getElementById('tempMaxMin');
-    const humidity   = document.getElementById('humidity');
-    const clouds     = document.getElementById('clouds');
-    
-    cityLocate.textContent = res.name +' '+ res.sys.country;
+    const humidity = document.getElementById('humidity');
+    const clouds = document.getElementById('clouds');
+
+    cityLocate.textContent = res.name + ' ' + res.sys.country;
 
     temp.innerHTML = `
       <h1 id="temp" class="h1-temp">
@@ -27,10 +27,10 @@ export function tempNow(res) {
     `
 
     const windSpeed = document.getElementById('windSpeed');
-  
-    windSpeed.textContent = res.wind.speed.toFixed(0) + 'km/h';
-    humidity.textContent  = res.main.humidity + '%';
-    clouds.textContent    = res.clouds.all + '%'
+
+    windSpeed.textContent = convertWindSpeedKm(res.wind.speed).toFixed(0) + 'km/h';
+    humidity.textContent = res.main.humidity + '%';
+    clouds.textContent = res.clouds.all + '%'
 }
 
 export function airQuality(res) {
@@ -73,14 +73,14 @@ export function airQuality(res) {
 
 export async function openWeatherMap(res) {
 
-    var map = await L.map('openWeather-maps').setView([res.coord.lat,res.coord.lon], 10);
+    var map = await L.map('openWeather-maps').setView([res.coord.lat, res.coord.lon], 10);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([res.coord.lat,res.coord.lon]).addTo(map)
-} 
+    L.marker([res.coord.lat, res.coord.lon]).addTo(map)
+}
 
 export function visible(res) {
     const visible = document.getElementById('visible')
@@ -92,7 +92,7 @@ export function visible(res) {
         </div>
     `
 }
-    
+
 
 export function sunTime(res) {
     const coords = document.getElementById('coordenadas');
@@ -129,10 +129,10 @@ export function sunTime(res) {
 
 export function weather(res) {
     const weather = document.getElementById('weather');
-    weather.innerHTML=""
+    weather.innerHTML = ""
 
     res.list.map((list) => {
-        
+
         const article = document.createElement('article');
         article.classList.add('days');
 
