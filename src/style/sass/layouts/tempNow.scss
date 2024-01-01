@@ -101,12 +101,14 @@
                 .p-temp {
                     color: var(--p-temp);
 
-                    @include font-20;
+                    @include font-16;
 
                     text-align: center;
 
                     .temp-b {
                         color: var(--b-temp);
+                    
+                        @include font-20;
                     }
                 }
             }
