@@ -38,7 +38,7 @@
                     color: var(--foo-p-days);
 
                     .s-foo-days {
-                        @include font-14;
+                        @include font-12;
                         color: var(--s-foo-days);
                     }
                 }
@@ -50,6 +50,7 @@
 
                 color: var(--foo-data-cor);
                 margin-top: 1.5rem;
+                text-align: center;
             }
         }
     }
