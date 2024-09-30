@@ -1,7 +1,13 @@
 #!/bin/bash 
 
 # criar pasta dist com bundle webpack
-yarn wpack
+if [ -x "$(command -v yarn)" ]; then
+	yarn wpack
+elif [ -x "$(command -v npm)" ]; then
+	npm run wpack
+else 
+	echo "O node js nao esta instalado na maquina"	
+fi 
 
 # variavel para o caminho das pastas 
 assetsDir=${PWD}/src/assets
