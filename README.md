@@ -21,7 +21,7 @@ nvm use
 Usar o comando:
 
 ```zsh
-yarn
+yarn # npm install
 ```
 
 Para criar o bundle webpack e criar container docker do nginx e transferir a pasta dist do bundle do webpack na pasta html do nginx
