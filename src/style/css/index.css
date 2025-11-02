@@ -302,6 +302,22 @@ body {
   outline: none;
 }
 
+.c-hora-local {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.c-hora-local .hora-local {
+  font-family: "Fira Code", monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--head-air-sun);
+  position: absolute;
+  top: -30px;
+}
+
 .container .week {
   background-color: var(--bg-color-week);
   border-radius: 10px;

@@ -25,3 +25,13 @@ export function timeStamp(codigo, timezone) {
 export function convertWindSpeedKm(ms) {
     return ms * 3.6;
 }
+
+export function horarioLocal(dt, timezone) {
+    if ( !dt && !timezone) return document.getElementById('horariLocalId').textContent = ''
+
+    const calcularTimeStamp = new Date((dt + timezone) * 1000)
+
+    const horarioFormatado = calcularTimeStamp.toLocaleString()
+
+    return document.getElementById('horariLocalId').textContent = horarioFormatado
+}

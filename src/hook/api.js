@@ -13,6 +13,7 @@ import {
 } from './token.js';
 
 import { tempNow, airQuality, visible ,sunTime, weather, openWeatherMap } from './htmlRender.js';
+import { horarioLocal } from './utils.js';
 
 const lang = 'pt_br';
 
@@ -66,6 +67,7 @@ async function getApi(city) {
 
   getApiAirQuality(res.coord.lat,res.coord.lon,res.sys.sunrise,res.sys.sunset)
 
+  horarioLocal(res.dt, res.timezone)
 }
 
 
