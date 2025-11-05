@@ -1,4 +1,4 @@
-import { kelvinCelsius, visibility, byId, timeStamp, convertWindSpeedKm } from './utils.js';
+import { kelvinCelsius, visibility, byId, timeStamp, convertWindSpeedKm, horarioLocal } from './utils.js';
 
 export function tempNow(res) {
 
@@ -154,4 +154,10 @@ export function weather(res) {
         `
         weather.append(article);
     })
+}
+
+export function mostrandoHorarioLocal(dt, timezone) {
+    const constHorarioLocal = horarioLocal(dt, timezone)
+
+    return document.getElementById('horariLocalId').textContent = constHorarioLocal;
 }

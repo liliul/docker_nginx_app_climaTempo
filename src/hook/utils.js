@@ -42,5 +42,5 @@ export function horarioLocal(dt, timezone) {
         timeZone: 'UTC'  
     })
 
-    return document.getElementById('horariLocalId').textContent = horarioFormatado
+    return horarioFormatado
 }
