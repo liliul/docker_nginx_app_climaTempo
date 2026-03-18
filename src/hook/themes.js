@@ -1,7 +1,9 @@
 import { guardarNoLocalStorage } from './localStorage.js';
 
 const selec = document.querySelector('#select')
-const body = document.querySelector('body')
+const rootHtml = document.documentElement
+
+if (!localStorage.TempThemes) rootHtml.setAttribute('data-theme', 'default')
 
 window.addEventListener('DOMContentLoaded', getTheme) 
 
@@ -10,7 +12,7 @@ function getTheme (event) {
 
   if ( localStorage.TempThemes ) {
 
-    body.classList.add(localStorage.TempThemes)
+    rootHtml.setAttribute("data-theme", localStorage.TempThemes)
      
     let op = document.createElement('option')
     op.setAttribute('selected','')
@@ -35,8 +37,8 @@ function selected() {
   for (const { text } of selec) {   
 
     if ( isText === text ) {
-      body.className = ''; 
-      body.classList.add(text)     
+      rootHtml.removeAttribute("data-theme")
+      rootHtml.setAttribute("data-theme", text)
     } 
   }
 }

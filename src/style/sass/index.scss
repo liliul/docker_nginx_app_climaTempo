@@ -7,4 +7,14 @@
 @import './utils/index.scss';
 @import './layouts/index.scss';
 
+body {
+    background-image: var(--img-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
 
+    background-color: var(--bg-color);
+
+    margin-bottom: 3rem;
+}

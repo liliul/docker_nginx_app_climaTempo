@@ -1,4 +1,4 @@
-import './style/css/index.css';
+// import './style/css/index.css';
 
 import './hook/themes.js';
 
