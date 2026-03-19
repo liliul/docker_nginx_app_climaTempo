@@ -1,56 +1,54 @@
 :root[data-theme="massaRosa"] {
-    --bg-input-search: #855e6e;
-    --cor-font-input: #ffdbd7;
+    --bg-input-search: #ffdbd7;
+    --cor-font-input: #855e6e;
     --focus-input: #ce7095;
-    --cor-placeholder-input: #f7f1e1;
-    --bg-button-search: #855e6e;
-    --cor-button-search: #f7f1e1;
-    --bg-button-search-hover: #855e6e;
-    --boxShadow-input-search: #ffdbd7;
+    --cor-placeholder-input: #855e6e;
+    --bg-button-search: #ffdbd7;
+    --cor-button-search: #855e6e;
+    --bg-button-search-hover: #ffdbd7;
+    --boxShadow-input-search: rgba(0, 0, 0, 0.1);
 
-    --visible-info-cor:#ffb2c1;
-    --visible-info2-cor: #ce7095;
+    --visible-info-cor: #ce7095;
+    --visible-info2-cor: #855e6e;
 
-    --openW-maps-h2-cor: #ffb2c1;
-
-    --styleCoords: #f7f1e1;
-    --stylePCoords: #ce7095;
-
-    --foo-data-cor: #ffb2c1;
+    --openW-maps-h2-cor: #855e6e;
 
     --img-bg: initial;
     --img-bg-tempNow: initial;
     --blur-bg: filter: blur(20px);
 
-    --bg-color: #ce7095 ;
-    --bg-color-week: #855e6e; 
+    --bg-color: #ffdbd7;
+    --bg-color-week: #ffdbd7; 
 
-    --shawdow-b-week: #f7f1e1;
+    --shawdow-b-week: rgba(0, 0, 0, 0.1);
 
-    --icon-head: #ffdbd7;
+    --icon-head: #855e6e;
 
-    --text-city: #ffdbd7;
+    --text-city: #855e6e;
 
-    --h1-temp: #f7f1e1;
-    --span-temp: #f7f1e1;
-    --p-temp: #f7f1e1;
-    --b-temp: #ffdbd7;
+    --h1-temp: #855e6e;
+    --span-temp: #855e6e;
+    --p-temp: #855e6e;
+    --b-temp: #885e6e;
     --bg-statistics: #ce7095;
     --icon-statics: #ffdbd7;
-    --info-statics: #f7f1e1;
-    --span-info: #f7f1e1;
+    --info-statics: #ffdbd7;
+    --span-info: #855e6e;
 
-    --icon-air-sun: #ffdbd7;
-    --head-air-sun: #ffdbd7;
+    --icon-air-sun: #855e6e;
+    --head-air-sun: #855e6e;
+    --styleCoords: #ce7095;
+    --stylePCoords: #855e6e;
 
-    --air-p-num: #ffb2c1;
+    --air-p-num: #855e6e;
     --air-strong-info: #ce7095;
 
-    --icon-main-sun: #ffdbd7;
+    --icon-main-sun: #855e6e;
 
-    --h3-days: #ffb2c1;
-    --foo-p-days: #f7f1e1;
-    --s-foo-days:#ffdbd7;
+    --h3-days: #855e6e;
+    --foo-p-days: #ce7095;
+    --s-foo-days: #855e6e;
+    --foo-data-cor: #855e6e;
 }
 
 // .color1 { #f7f1e1 };
