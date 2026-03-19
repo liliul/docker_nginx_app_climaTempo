@@ -309,6 +309,24 @@ html {
   top: -30px;
 }
 
+@media screen and (min-width: 880px) {
+  .c-hora-local {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 1.2rem;
+  }
+  .c-hora-local .hora-local {
+    font-family: "Fira Code", monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--head-air-sun);
+    position: absolute;
+    top: -30px;
+  }
+}
 .container .week {
   background-color: var(--bg-color-week);
   border-radius: 10px;
@@ -325,6 +343,11 @@ html {
 .searchCity .c-input-button {
   display: flex;
   gap: 1.5rem;
+  width: 100%;
+  max-width: calc(100% - 50px);
+}
+.searchCity .c-input-button .input {
+  width: 100%;
 }
 .searchCity .c-input-button .input #input-search-city {
   width: 100%;
@@ -371,6 +394,7 @@ html {
   .searchCity .c-input-button {
     display: flex;
     gap: 1rem;
+    width: 56rem;
   }
   .searchCity .c-input-button .input #input-search-city {
     width: 55rem;

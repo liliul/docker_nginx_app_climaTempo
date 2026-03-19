@@ -11,9 +11,11 @@
     .c-input-button {
         display: flex;
         gap: 1.5rem;
+        width: 100%;
+        max-width: calc(100% - 50px);
 
         .input {
-
+            width: 100%;
 
             #input-search-city {
                 width: 100%;
@@ -76,7 +78,8 @@
 
             display: flex;
             gap: 1rem;
-
+            width: 56rem;
+            
             .input {
 
 
