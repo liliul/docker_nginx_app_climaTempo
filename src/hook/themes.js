@@ -3,7 +3,7 @@ import { guardarNoLocalStorage } from './localStorage.js';
 const selec = document.querySelector('#select')
 const rootHtml = document.documentElement
 
-if (!localStorage.TempThemes) rootHtml.setAttribute('data-theme', 'default')
+if (!localStorage.TempThemes) rootHtml.removeAttribute('data-theme')
 
 window.addEventListener('DOMContentLoaded', getTheme) 
 
