@@ -44,3 +44,14 @@ export function horarioLocal(dt, timezone) {
 
     return horarioFormatado
 }
+
+export async function carregarIcon(iconCode) {
+  const res = await fetch(`./src/assets/iconsTemp/${iconCode}.svg`);
+  let svg = await res.text();
+
+  const color = iconCode.endsWith('d') ? 'var(--icon-svg-day)' : 'var(--icon-svg-night)';
+
+  svg = svg.replace('<svg', `<svg style="color: ${color}"`);
+
+  return svg
+}

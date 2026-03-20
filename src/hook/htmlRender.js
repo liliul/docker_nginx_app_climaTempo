@@ -1,9 +1,10 @@
-import { kelvinCelsius, visibility, byId, timeStamp, convertWindSpeedKm, horarioLocal } from './utils.js';
+import { byId, carregarIcon, convertWindSpeedKm, horarioLocal, kelvinCelsius, timeStamp, visibility } from './utils.js';
 
-export function tempNow(res) {
-
+export async function tempNow(res) {
+    const iconCode = await carregarIcon(res.weather[0].icon)
+ 
     byId('iconTempNow').innerHTML = `
-        <img src="./src/assets/iconsTemp/${res.weather[0].icon}.svg" />
+        ${iconCode}
     `;
 
     const cityLocate = document.getElementById('cityLocate');
@@ -127,13 +128,19 @@ export function sunTime(res) {
     `
 }
 
-export function weather(res) {
+export async function weather(res) {
     const weather = document.getElementById('weather');
     weather.innerHTML = ""
 
     const timezoneWeather = res.city.timezone;
+    const items = await Promise.all(
+        res.list.map(async (list) => {
+            const svg = await carregarIcon(list.weather[0].icon);
+            return { list, svg };
+        })
+    );
 
-    res.list.map((list) => {
+    items.forEach(({ list, svg }) => {
 
         const article = document.createElement('article');
         article.classList.add('days');
@@ -144,7 +151,7 @@ export function weather(res) {
             </header>
 
             <section class="main-days">
-                <img src="./src/assets/iconsTemp/${list.weather[0].icon}.svg" />                      
+                ${svg}                     
             </section>
 
             <footer class="foo-days">

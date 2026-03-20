@@ -3,16 +3,16 @@
 //  https://home.openweathermap.org/api_keys
 //  romero ark sirome4179@farebus.com senha:romero1234?
 
-import { 
-  TOKEN_API_OPEN_WEATHER, 
-  URL_API_OPEN_WEATHER, 
+import {
   APPID_TOKEN,
   LANG,
-  URL_AR, 
+  TOKEN_API_OPEN_WEATHER,
+  URL_API_OPEN_WEATHER,
+  URL_AR,
   URL_FORECAST
 } from './token.js';
 
-import { tempNow, airQuality, visible ,sunTime, weather, openWeatherMap, mostrandoHorarioLocal } from './htmlRender.js';
+import { airQuality, mostrandoHorarioLocal, openWeatherMap, sunTime, tempNow, visible, weather } from './htmlRender.js';
 
 const lang = 'pt_br';
 
@@ -88,5 +88,5 @@ async function getApiDaysTemp(city) {
     throw Error(res.statusText), alert('Nome de cidade Invalida')
   }
   
-  return weather(res)
+  return await weather(res)
 }
