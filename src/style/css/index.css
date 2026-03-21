@@ -48,6 +48,10 @@ html {
   --h3-days: #DAD8F7;
   --foo-p-days: #FFFFFF;
   --s-foo-days:#DAD8F7;
+  --icon-svg-day: #d5baff;
+  --icon-svg-night: #beafd3;
+  --icon-svg-sun: #caa2f8;
+  --icon-svg-moon: #caa2f8;
 }
 
 :root[data-theme=dracula] {
@@ -56,48 +60,54 @@ html {
   --focus-input: #9B6BDF;
   --cor-placeholder-input: #E356A7;
   --bg-button-search: #282A36;
-  --cor-button-search: #50FA7B;
+  --cor-button-search: #E356A7;
   --bg-button-search-hover: #282A36;
-  --boxShadow-input-search: #9B6BDF;
-  --visible-info-cor:#F1FA8C;
-  --visible-info2-cor: #E64747;
+  --boxShadow-input-search: rgba(189, 147, 249, 0.3);
   --openW-maps-h2-cor: #EFA554;
   --img-bg: initial;
   --img-bg-tempNow: initial;
-  --bg-color: #262626;
+  --bg-color: #282A36;
   --bg-color-week: #282A36;
-  --shawdow-b-week: #9B6BDF;
+  --shawdow-b-week: rgba(189, 147, 249, 0.3);
   --icon-head: #50FA7B;
   --text-city: #E356A7;
-  --h1-temp: #F1FA8C;
-  --span-temp: #E4F34A;
+  --h1-temp: #f8f8f2;
+  --span-temp: #6272a4;
   --p-temp: #8BE9FD;
-  --b-temp: #E64747;
-  --bg-statistics: transparent;
+  --b-temp: #F1FA8C;
+  --bg-statistics: rgba(255, 255, 255, 0.041);
   --icon-statics: #EFA554;
   --info-statics: #8BE9FD;
   --span-info: #75D7EC;
   --icon-air-sun: #50FA7B;
   --head-air-sun: #E356A7;
+  --visible-info-cor: #f8f8f2;
+  --visible-info2-cor: #6272a4;
   --air-p-num: #42E66C;
-  --air-strong-info: #F1FA8C;
+  --air-strong-info: #f8f8f2;
   --icon-main-sun: #E64747;
-  --h3-days: #FFB86C;
-  --foo-p-days: #75D7EC;
+  --h3-days: #E356A7;
+  --foo-p-days: #f8f8f2;
   --s-foo-days: #FF5555;
-  --foo-data-cor: #EFA554;
-  --styleCoords: #E64747;
-  --stylePCoords: #7A7A7A;
+  --foo-data-cor: #6272a4;
+  --styleCoords: #f8f8f2;
+  --stylePCoords: #6272a4;
+  --icon-svg-day: #EFA554;
+  --icon-svg-night: #6272a4;
+  --icon-svg-sun: #6272a4;
+  --icon-svg-moon: #EFA554;
+  --map-bg-color: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
 }
 
 :root[data-theme=temaBlack] {
-  --bg-input-search: #212121;
+  --bg-input-search: #000000f3;
   --cor-font-input: #FFF;
   --focus-input: #FFFFFF;
   --cor-placeholder-input: #FFF;
-  --bg-button-search: #212121;
+  --bg-button-search: #000000f3;
   --cor-button-search: #FFF;
-  --bg-button-search-hover: #212121;
+  --bg-button-search-hover: #191919;
+  --boxShadow-input-search: rgba(200,200,200, 0.2);
   --visible-info-cor:#FFF;
   --visible-info2-cor: #DAD8F7;
   --openW-maps-h2-cor: #FFFFFF;
@@ -108,8 +118,8 @@ html {
   --img-bg-tempNow: initial;
   --blur-bg: filter: blur(20px);
   --bg-color: #000000f3;
-  --bg-color-week: #212121;
-  --shawdow-b-week: initial;
+  --bg-color-week: #000000f3;
+  --shawdow-b-week: rgba(200,200,200, 0.2);
   --icon-head: #FFFFFF;
   --text-city: #FFFFFF;
   --h1-temp: #FFFFFF;
@@ -128,6 +138,10 @@ html {
   --h3-days: #FFF;
   --foo-p-days: #FFFFFF;
   --s-foo-days:#DAD8F7;
+  --icon-svg-day: #FFFFFF;
+  --icon-svg-night: #292931;
+  --icon-svg-sun: #e2dbdb;
+  --icon-svg-moon: #e2dbdb;
 }
 
 :root[data-theme=massaRosa] {
@@ -169,6 +183,10 @@ html {
   --foo-p-days: #ce7095;
   --s-foo-days: #855e6e;
   --foo-data-cor: #855e6e;
+  --icon-svg-day: #ce7095;
+  --icon-svg-night: #855e6e;
+  --icon-svg-sun: #f56aa1;
+  --icon-svg-moon: #f56aa1;
 }
 
 :root[data-theme=sorvete] {
@@ -179,18 +197,17 @@ html {
   --bg-button-search: #05a1ad;
   --cor-button-search: #4e031e;
   --bg-button-search-hover: #05a1ad;
+  --boxShadow-input-search: rgba(0,0,0, 0.1);
   --visible-info-cor:#5a4c6e;
   --visible-info2-cor: #4e031e;
   --openW-maps-h2-cor: #5a4c6e;
-  --styleCoords: #5a4c6e;
-  --stylePCoords: #5d2d4e;
   --foo-data-cor: #5d2d4e;
   --img-bg: initial;
   --img-bg-tempNow: initial;
   --blur-bg: filter: blur(20px);
-  --bg-color: #E7E6FB;
+  --bg-color: #05a1ad;
   --bg-color-week: #05a1ad;
-  --shawdow-b-week: initial;
+  --shawdow-b-week: rgba(0,0,0, 0.1);
   --icon-head: #4e031e;
   --text-city: #5a4c6e;
   --h1-temp: #5a4c6e;
@@ -203,12 +220,18 @@ html {
   --span-info: #4e031e;
   --icon-air-sun: #4e031e;
   --head-air-sun: #5a4c6e;
+  --styleCoords: #4e031e;
+  --stylePCoords: #5d2d4e;
   --air-p-num: #4e031e;
   --air-strong-info: #5a4c6e;
   --icon-main-sun: #4e031e;
   --h3-days: #5d2d4e;
   --foo-p-days: #4e031e;
   --s-foo-days:#5a4c6e;
+  --icon-svg-day: #5d2d4e;
+  --icon-svg-night: #4e031e;
+  --icon-svg-sun: #9b5284;
+  --icon-svg-moon: #9b5284;
 }
 
 :root[data-theme=geleia] {
@@ -226,10 +249,10 @@ html {
   --styleCoords: #723e4e;
   --stylePCoords: #b03851;
   --foo-data-cor: #723e4e;
-  --img-bg: url('../../assets/Background.png');
+  --img-bg: initial;
   --img-bg-tempNow: initial;
   --blur-bg: filter: blur(20px);
-  --bg-color: #6D67D0;
+  --bg-color: #ef3353;
   --bg-color-week: #ef3353;
   --shawdow-b-week: #f4b036;
   --img-nuvem-tempNow: initial;
@@ -251,6 +274,10 @@ html {
   --h3-days: #723e4e;
   --foo-p-days: #f4b036;
   --s-foo-days:#f17144;
+  --icon-svg-day: #f4b036;
+  --icon-svg-night: #723e4e;
+  --icon-svg-sun: #723e4e;
+  --icon-svg-moon: #f4b036;
 }
 
 .container .weekWeather .days .h-days .h3-days {
@@ -459,12 +486,12 @@ html {
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
-  top: -56px;
-  left: -56px;
+  top: -46px;
+  left: -36px;
 }
-.container .tempNow .head-tempNow .nuvens img {
-  width: 176px;
-  height: 176px;
+.container .tempNow .head-tempNow .nuvens svg {
+  width: 135px !important;
+  height: 135px !important;
 }
 .container .tempNow .head-tempNow .city {
   display: flex;
@@ -806,12 +833,12 @@ html {
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
-    top: -56px;
-    left: -56px;
+    top: -46px;
+    left: -36px;
   }
-  .container .tempNow .head-tempNow .nuvens img {
-    width: 176px;
-    height: 176px;
+  .container .tempNow .head-tempNow .nuvens svg {
+    width: 135px !important;
+    height: 135px !important;
   }
   .container .tempNow .head-tempNow .city {
     display: flex;
