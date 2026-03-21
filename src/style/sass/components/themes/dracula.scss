@@ -4,32 +4,28 @@
     --focus-input: #9B6BDF;
     --cor-placeholder-input: #E356A7;
     --bg-button-search: #282A36;
-    --cor-button-search: #50FA7B;
+    --cor-button-search: #E356A7;
     --bg-button-search-hover: #282A36;
-    --boxShadow-input-search: #9B6BDF;
-
-    --visible-info-cor:#F1FA8C;
-    --visible-info2-cor: #E64747;
+    --boxShadow-input-search: rgba(189, 147, 249, 0.3);
 
     --openW-maps-h2-cor: #EFA554;
 
     --img-bg: initial;
     --img-bg-tempNow: initial;
 
-    --bg-color: #262626; 
+    --bg-color: #282A36; 
     --bg-color-week: #282A36;
-
-    --shawdow-b-week: #9B6BDF;
+    --shawdow-b-week: rgba(189, 147, 249, 0.3);
 
     --icon-head: #50FA7B;
 
     --text-city: #E356A7;
 
-    --h1-temp: #F1FA8C;
-    --span-temp: #E4F34A;
+    --h1-temp: #f8f8f2;
+    --span-temp: #6272a4;
     --p-temp: #8BE9FD;
-    --b-temp: #E64747;
-    --bg-statistics: transparent;
+    --b-temp: #F1FA8C;  
+    --bg-statistics: rgba(255, 255, 255, 0.041);
     --icon-statics: #EFA554;
     --info-statics: #8BE9FD;
     --span-info: #75D7EC;
@@ -37,18 +33,28 @@
     --icon-air-sun: #50FA7B;
     --head-air-sun: #E356A7;
 
+    --visible-info-cor: #f8f8f2;
+    --visible-info2-cor: #6272a4;
+
     --air-p-num: #42E66C;
-    --air-strong-info: #F1FA8C;
+    --air-strong-info: #f8f8f2;
 
     --icon-main-sun: #E64747;
 
-    --h3-days: #FFB86C;
-    --foo-p-days: #75D7EC;
+    --h3-days: #E356A7;
+    --foo-p-days: #f8f8f2;
     --s-foo-days: #FF5555;
-    --foo-data-cor: #EFA554;
+    --foo-data-cor: #6272a4;
 
-    --styleCoords: #E64747;
-    --stylePCoords: #7A7A7A;
+    --styleCoords: #f8f8f2;
+    --stylePCoords: #6272a4;
+
+    --icon-svg-day: #EFA554;
+    --icon-svg-night: #6272a4;
+    --icon-svg-sun: #6272a4;
+    --icon-svg-moon: #EFA554;
+
+    --map-bg-color: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
 }
 // #141420
 // #1f1d2b
