@@ -18,11 +18,11 @@
 
     --foo-data-cor: #723e4e;
 
-    --img-bg: url('../../assets/Background.png');
+    --img-bg: initial;
     --img-bg-tempNow: initial;
     --blur-bg: filter: blur(20px);
 
-    --bg-color: #6D67D0;
+    --bg-color: #ef3353;
     --bg-color-week: #ef3353; 
 
     --shawdow-b-week: #f4b036;
@@ -52,6 +52,11 @@
     --h3-days: #723e4e;
     --foo-p-days: #f4b036;
     --s-foo-days:#f17144;
+
+    --icon-svg-day: #f4b036;
+    --icon-svg-night: #723e4e;
+    --icon-svg-sun: #723e4e;    
+    --icon-svg-moon: #f4b036;
 }
 
 // .color1 { #723e4e };
