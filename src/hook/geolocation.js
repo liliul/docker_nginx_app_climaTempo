@@ -13,20 +13,32 @@ export const geo = () => {
 }
 
 async function getApis(lat, lon) {
-  const [reqApi1, reqApi2, reqApi3] = await Promise.all([
-    fetch(`${URL_WHEATER}lat=${lat}&lon=${lon}&appid=${TOKEN_API_OPEN_WEATHER}&lang=${LANG}`),
-    fetch(`${URL_AR}lat=${lat}&lon=${lon}&appid=${TOKEN_API_OPEN_WEATHER}&lang=${LANG}`),
-    fetch(`${URL_FORECAST}lat=${lat}&lon=${lon}&cnt=8&appid=${TOKEN_API_OPEN_WEATHER}&units=${UNITS}&lang=${LANG}`),
-  ])
+  try {
 
-  const resApi1 = await reqApi1.json();
-  const resApi2 = await reqApi2.json();
-  const resApi3 = await reqApi3.json();
+    const requests = await Promise.all([
+      fetch(`${URL_WHEATER}lat=${lat}&lon=${lon}&appid=${TOKEN_API_OPEN_WEATHER}&lang=${LANG}`),
+      fetch(`${URL_AR}lat=${lat}&lon=${lon}&appid=${TOKEN_API_OPEN_WEATHER}&lang=${LANG}`),
+      fetch(`${URL_FORECAST}lat=${lat}&lon=${lon}&cnt=8&appid=${TOKEN_API_OPEN_WEATHER}&units=${UNITS}&lang=${LANG}`),
+    ])
 
-  tempNow(resApi1)
-  airQuality(resApi2)
-  visible(resApi1)
-  sunTime(resApi1)   
-  openWeatherMap(resApi1)
-  weather(resApi3)
+    requests.forEach((res) => {
+      if (!res.ok) {
+        throw new Error(`Erro na API: getApis em requests chamando as apis. status: ${res.status}`)
+      }
+    })
+
+    const [resApi1, resApi2, resApi3] = await Promise.all(
+      requests.map((res) => res.json())
+    )
+
+    tempNow(resApi1)
+    airQuality(resApi2)
+    visible(resApi1)
+    sunTime(resApi1)   
+    openWeatherMap(resApi1)
+    weather(resApi3)
+
+  } catch (error) {
+    console.error("Erro ao buscar dados:", error)   
+  }
 }
