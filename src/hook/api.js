@@ -1,20 +1,18 @@
 //  https://openweathermap.org/current
 //  https://openweathermap.org/current#multi
 //  https://home.openweathermap.org/api_keys
-//  romero ark sirome4179@farebus.com senha:romero1234?
 
 import {
-  APPID_TOKEN,
   LANG,
   TOKEN_API_OPEN_WEATHER,
-  URL_API_OPEN_WEATHER,
+  UNITS,
+  URL_API_OPEN_WEATHER_SEARCH,
   URL_AR,
-  URL_FORECAST
-} from './token.js';
+  URL_FORECAST_SEARCH
+} from './env.js';
+
 
 import { airQuality, mostrandoHorarioLocal, openWeatherMap, sunTime, tempNow, visible, weather } from './htmlRender.js';
-
-const lang = 'pt_br';
 
 const inputSearchCity  = document.getElementById('input-search-city');
 const buttonSearchCity = document.getElementById('button-search-city');
@@ -54,7 +52,7 @@ toCall()
 
 
 async function getApi(city) {
-  const req = await fetch(`${URL_API_OPEN_WEATHER}${city}${APPID_TOKEN}${TOKEN_API_OPEN_WEATHER}${LANG}${lang}`)
+  const req = await fetch(`${URL_API_OPEN_WEATHER_SEARCH}${city}&appid=${TOKEN_API_OPEN_WEATHER}&lang=${LANG}`)
   const res = await req.json();
   if(!req.ok) return
 
@@ -72,7 +70,7 @@ async function getApi(city) {
 
 
 async function getApiAirQuality(lat, lon,sunrise,sunset) {
-  const req = fetch(`${URL_AR}lat=${lat}&lon=${lon}&start=${sunrise}&end=${sunset}${APPID_TOKEN}${TOKEN_API_OPEN_WEATHER}&lang=${lang}`);
+  const req = fetch(`${URL_AR}lat=${lat}&lon=${lon}&start=${sunrise}&end=${sunset}8&appid=${TOKEN_API_OPEN_WEATHER}&lang=${LANG}`);
   const res = await (await req).json();
 
   airQuality(res)
@@ -81,7 +79,7 @@ async function getApiAirQuality(lat, lon,sunrise,sunset) {
 
 
 async function getApiDaysTemp(city) {
-  const req = await fetch(`${URL_FORECAST}${city}&cnt=8&appid=${TOKEN_API_OPEN_WEATHER}&units=metric&lang=${lang}`);
+  const req = await fetch(`${URL_FORECAST_SEARCH}${city}&cnt=8&appid=${TOKEN_API_OPEN_WEATHER}&units=${UNITS}&lang=${LANG}`);
   const res = await req.json();
 
   if(!req.ok) {

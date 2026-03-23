@@ -2,13 +2,31 @@
 
 ### Iniciando o projeto
 
-##### Clonar o repositorio:
+### Clonar o repositorio:
 
 ```bash
 git clone https://github.com/liliul/docker_nginx_app_climaTempo.git
 ```
 
-##### Virificar versão do nodejs em .nvmrc
+### Criar env com tokens
+
+```bash
+# criar em src/hook/env.js
+
+export const TOKEN_API_OPEN_WEATHER="";
+export const APPID_TOKEN="&appid=";
+export const LANG="pt_br";
+export const UNITS="metric"
+
+export const URL_API_OPEN_WEATHER_SEARCH ="https://api.openweathermap.org/data/2.5/weather?q=";
+export const URL_AR ="https://api.openweathermap.org/data/2.5/air_pollution?";
+export const URL_WHEATER ="https://api.openweathermap.org/data/2.5/weather?";
+export const URL_FORECAST_SEARCH ="https://api.openweathermap.org/data/2.5/forecast?q=";
+export const URL_FORECAST ="https://api.openweathermap.org/data/2.5/forecast?"
+
+```
+
+### Virificar versão do nodejs em .nvmrc
 
 Usar .nvmrc:
 
@@ -16,7 +34,7 @@ Usar .nvmrc:
 nvm use
 ```
 
-##### Usando yarn para instalar os pacotes nodejs
+### Usando yarn para instalar os pacotes nodejs
 
 Usar o comando:
 
