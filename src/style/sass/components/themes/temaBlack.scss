@@ -1,12 +1,12 @@
 :root[data-theme="temaBlack"] {
-    --bg-input-search: #000000f3;
+    --bg-input-search: #1c1c1c;
     --cor-font-input: #FFF;
     --focus-input: #FFFFFF;
     --cor-placeholder-input: #FFF;
-    --bg-button-search: #000000f3;
+    --bg-button-search: #1c1c1c;
     --cor-button-search: #FFF;
     --bg-button-search-hover: #191919;
-    --boxShadow-input-search: rgba(200,200,200, 0.2);
+    --boxShadow-input-search: initial;
 
     --visible-info-cor:#FFF;
     --visible-info2-cor: #DAD8F7;
@@ -23,9 +23,9 @@
     --blur-bg: filter: blur(20px);
 
     --bg-color: #000000f3;
-    --bg-color-week: #000000f3; 
+    --bg-color-week: #1c1c1c; 
 
-    --shawdow-b-week: rgba(200,200,200, 0.2);
+    --shawdow-b-week: initial;
 
     --icon-head: #FFFFFF;
 
