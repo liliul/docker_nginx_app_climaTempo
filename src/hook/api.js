@@ -33,7 +33,7 @@ function searchCity() {
   
   sessionStorage.setItem("searchCity", inputSearchCity.value);
   
-  window.location.reload(false)
+  toCall()
 }
 
 
