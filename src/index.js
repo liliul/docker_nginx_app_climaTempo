@@ -7,5 +7,11 @@ import './hook/api.js';
 import { geo } from './hook/geolocation.js';
 
 const inputSearchCity  = document.getElementById('input-search-city');
+let geoSearchBoolen = false;
 
-inputSearchCity.addEventListener('click', geo)
+inputSearchCity.addEventListener('click', () => {
+    if (!geoSearchBoolen) {
+        geoSearchBoolen = true;
+        geo();
+    }
+})

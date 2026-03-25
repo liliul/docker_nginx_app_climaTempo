@@ -55,3 +55,18 @@ export async function carregarIcon(iconCode) {
 
   return svg
 }
+
+export function atualizarMapa(map, marker, res) {
+  if (!map) return;
+
+  map.flyTo([res.coord.lat, res.coord.lon], 10, {
+    animate: false,
+    duration: 1.5
+  });
+
+  if (marker) {
+    marker.setLatLng([res.coord.lat, res.coord.lon]);
+  } else {
+    marker = L.marker([res.coord.lat, res.coord.lon]).addTo(map);
+  }
+}

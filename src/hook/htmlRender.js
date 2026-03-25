@@ -1,4 +1,4 @@
-import { byId, carregarIcon, convertWindSpeedKm, horarioLocal, kelvinCelsius, timeStamp, visibility } from './utils.js';
+import { atualizarMapa, byId, carregarIcon, convertWindSpeedKm, horarioLocal, kelvinCelsius, timeStamp, visibility } from './utils.js';
 
 export async function tempNow(res) {
     const iconCode = await carregarIcon(res.weather[0].icon)
@@ -72,9 +72,16 @@ export function airQuality(res) {
     `
 }
 
-export async function openWeatherMap(res) {
+let map = null;
+let marker = null;
 
-    var map = await L.map('openWeather-maps').setView([res.coord.lat, res.coord.lon], 10);
+export async function openWeatherMap(res) {
+    if (map) {
+        atualizarMapa(map, marker, res);
+        return;
+    }
+
+    map = await L.map('openWeather-maps').setView([res.coord.lat, res.coord.lon], 10);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
