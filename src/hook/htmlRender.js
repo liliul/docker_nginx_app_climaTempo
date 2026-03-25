@@ -87,7 +87,7 @@ export async function openWeatherMap(res) {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([res.coord.lat, res.coord.lon]).addTo(map)
+    marker = L.marker([res.coord.lat, res.coord.lon]).addTo(map)
 }
 
 export function visible(res) {
