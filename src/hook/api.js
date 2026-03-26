@@ -29,10 +29,12 @@ inputSearchCity.addEventListener('keydown', (e) => {
 
 
 function searchCity() {
-  if(!inputSearchCity.value) return
-  if(inputSearchCity.value === sessionStorage.getItem("searchCity")) return
+  const cityLowerCase = inputSearchCity.value.toLowerCase();
 
-  sessionStorage.setItem("searchCity", inputSearchCity.value);
+  if(!inputSearchCity.value) return
+  if(cityLowerCase === sessionStorage.getItem("searchCity")) return
+  
+  sessionStorage.setItem("searchCity", cityLowerCase);
   
   toCall()
 
