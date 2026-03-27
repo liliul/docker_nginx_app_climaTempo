@@ -42,6 +42,15 @@ Usar o comando:
 yarn # npm install
 ```
 
+### Iniciar desenvolvimento 
+
+```zsh
+
+# antes de rodar o npm autorizar script chmod +x dev.sh
+npm run dev:sh
+
+```
+
 Para criar o bundle webpack e criar container docker do nginx e transferir a pasta dist do bundle do webpack na pasta html do nginx
 
 Camando bash:

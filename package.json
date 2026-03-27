@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "sass -w src/style/sass/index.scss:src/style/css/index.css & live-server --no-browser",
     "webpack": "webpack --watch",
-    "wpack": "webpack"
+    "wpack": "webpack",
+    "dev:sh": "./dev.sh"
   },
   "keywords": [],
   "author": "",
