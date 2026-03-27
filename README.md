@@ -42,12 +42,28 @@ Usar o comando:
 yarn # npm install
 ```
 
-### Iniciar desenvolvimento 
+### Iniciar desenvolvimento com functions 
 
 ```zsh
 
 # antes de rodar o npm autorizar script chmod +x dev.sh
 npm run dev:sh
+
+# rodar projeto
+firebase emulators:start
+# devtools em: http://localhost:4000
+# frontend em: http://localhost:5000
+# backend  em: http://127.0.0.1:5001/climatempo-6f654/us-central1/weather?lat=41.85&lon=-87.65
+# backend  em: http://127.0.0.1:5001/climatempo-6f654/us-central1/forecast?lat=41.85&lon=-87.65
+# backend  em: http://127.0.0.1:5001/climatempo-6f654/us-central1/airPollution?lat=41.85&lon=-87.65
+
+# deploy para firebase
+# envia tudo — Hosting + Functions de uma vez
+firebase deploy
+# ou separado se quiser mais controle
+firebase deploy --only hosting
+firebase deploy --only functions
+firebase deploy --only hosting,functions
 
 ```
 
