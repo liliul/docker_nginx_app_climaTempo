@@ -20,6 +20,16 @@ function validarLatLon(req, res) {
   return { lat, lon };
 }
 
+function validarCidade(req, res) {
+  const { q } = req.query;
+  if (!q) {
+    res.status(400).json({ erro: "Nome da cidade é obrigatoria" });
+    return false;
+  }
+
+  return {q} 
+}
+
 // ── Rota 1: Weather ───────────────────────────────────────────
 exports.weather = functions.https.onRequest((req, res) => {
   cors(req, res, async () => {
@@ -94,6 +104,33 @@ exports.airPollution = functions.https.onRequest((req, res) => {
 
     } catch (e) {
       res.status(500).json({ erro: "Erro ao buscar air pollution", detalhe: e.message });
+    }
+  });
+});
+
+exports.weatherSearch = functions.https.onRequest((req, res) => {
+  cors(req, res, async () => {
+    const params = validarCidade(req, res);
+    console.log(params);
+    
+    if (!params) return;
+
+    try {
+      const url = buildUrl("/data/2.5/weather?q=", {
+        ...params,
+        appid: process.env.OPENWEATHER_API_KEY,
+        lang: LANG,
+      });
+      console.log(url);
+      
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`OWM status: ${response.status}`);
+
+      const data = await response.json();
+      res.status(200).json(data);
+
+    } catch (e) {
+      res.status(500).json({ erro: "Erro ao buscar weather", detalhe: e.message });
     }
   });
 });

@@ -1,76 +1,67 @@
-//  https://openweathermap.org/current
-//  https://openweathermap.org/current#multi
-//  https://home.openweathermap.org/api_keys
-
-// import {
-//     LANG,
-//     TOKEN_API_OPEN_WEATHER,
-//     UNITS,
-//     URL_API_OPEN_WEATHER_SEARCH,
-//     URL_AR,
-//     URL_FORECAST_SEARCH
-// } from './functionsEnv.js';
+import {
+  URL_WHEATER_SEARCH_FUNCTIONS
+} from './functionsEnv.js';
 
 
-// import { airQuality, mostrandoHorarioLocal, openWeatherMap, sunTime, tempNow, visible, weather } from './htmlRender.js';
+import { mostrandoHorarioLocal, openWeatherMap, sunTime, tempNow, visible } from '../hook/htmlRender.js';
 
-// const inputSearchCity  = document.getElementById('input-search-city');
-// const buttonSearchCity = document.getElementById('button-search-city');
+const inputSearchCity  = document.getElementById('input-search-city');
+const buttonSearchCity = document.getElementById('button-search-city');
 
 
-// buttonSearchCity.addEventListener('click', searchCity);
-// inputSearchCity.addEventListener('keydown', (e) => {
+buttonSearchCity.addEventListener('click', searchCity);
+inputSearchCity.addEventListener('keydown', (e) => {
   
-//   if(e.key === "Enter") {
-//     searchCity()
-//   }
-// })
+  if(e.key === "Enter") {
+    searchCity()
+  }
+})
 
 
 
-// function searchCity() {
-//   const cityLowerCase = inputSearchCity.value.toLowerCase();
+function searchCity() {
+  const cityLowerCase = inputSearchCity.value.toLowerCase();
 
-//   if(!inputSearchCity.value) return
-//   if(cityLowerCase === sessionStorage.getItem("searchCity")) return
+  if(!inputSearchCity.value) return
+  if(cityLowerCase === sessionStorage.getItem("searchCity")) return
   
-//   sessionStorage.setItem("searchCity", cityLowerCase);
+  sessionStorage.setItem("searchCity", cityLowerCase);
   
-//   toCall()
+  toCall()
 
-//   inputSearchCity.value = ''
-// }
+  inputSearchCity.value = ''
+}
 
 
 
-// function toCall() {
-//   const getItemSearchCity = sessionStorage.getItem("searchCity");
+function toCall() {
+  const getItemSearchCity = sessionStorage.getItem("searchCity");
   
-//   if(getItemSearchCity == null) return
+  if(getItemSearchCity == null) return
   
-//   getApi(getItemSearchCity)
-//   getApiDaysTemp(getItemSearchCity)
+  getApi(getItemSearchCity)
+  getApiDaysTemp(getItemSearchCity)
   
-// }
-// toCall()
+}
+toCall()
 
 
 
-// async function getApi(city) {
-//   const req = await fetch(`${URL_API_OPEN_WEATHER_SEARCH}${city}&appid=${TOKEN_API_OPEN_WEATHER}&lang=${LANG}`)
-//   const res = await req.json();
-//   if(!req.ok) return
+async function getApi(city) {
+  const req = await fetch(`${URL_WHEATER_SEARCH_FUNCTIONS}${city}`)
+  const res = await req.json();
+  if(!req.ok) return
 
-//   tempNow(res)
-//   visible(res)
-//   sunTime(res)
+  tempNow(res)
+  visible(res)
+  sunTime(res)
 
-//   openWeatherMap(res)
+  openWeatherMap(res)
 
-//   getApiAirQuality(res.coord.lat,res.coord.lon,res.sys.sunrise,res.sys.sunset)
+  getApiAirQuality(res.coord.lat,res.coord.lon,res.sys.sunrise,res.sys.sunset)
 
-//   mostrandoHorarioLocal(res.dt, res.timezone)
-// }
+  mostrandoHorarioLocal(res.dt, res.timezone)
+}
 
 
 
@@ -84,7 +75,7 @@
 
 
 // async function getApiDaysTemp(city) {
-//   const req = await fetch(`${URL_FORECAST_SEARCH}${city}&cnt=8&appid=${TOKEN_API_OPEN_WEATHER}&units=${UNITS}&lang=${LANG}`);
+//   const req = await fetch(`${URL_FORECAST_SEARCH_FUNCTIONS}${city}&cnt=8&appid=${TOKEN_API_OPEN_WEATHER}&units=${UNITS}&lang=${LANG}`);
 //   const res = await req.json();
 
 //   if(!req.ok) {
