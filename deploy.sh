@@ -1,0 +1,45 @@
+#!/bin/bash 
+
+# Deploy para hosting
+
+# excluir pasta dist e public
+rm -rf dist public
+echo "Pastas dist e public excluida"
+
+# criar pasta dist com bundle webpack
+if [ -x "$(command -v yarn)" ]; then
+	yarn wpack
+elif [ -x "$(command -v npm)" ]; then
+	npm run wpack
+else 
+	echo "O node js nao esta instalado na maquina"	
+fi 
+# variavel para o caminho das pastas 
+assetsDir=${PWD}/src/assets
+distDir=${PWD}/dist/src
+# copiar pasta assets em dist/src
+cp -r $assetsDir $distDir
+
+
+# verificar se pasta public existe
+publicRoot="./public"
+if [ ! -d "$publicRoot" ]; then
+    echo "Pasta $publicRoot não encontrada"
+    mkdir -p "$publicRoot"
+    echo "Pasta $publicRoot criada com sucesso"
+else
+    echo "A pasta $publicRoot ja existe"
+fi
+# variavel para o caminho das pastas 
+publicDir=${PWD}/public
+distDir=${PWD}/dist/*
+# copiar arquivos dentro da pasta dist e enviar para public
+cp -rv $distDir $publicDir
+
+
+set -e # parar se der erro
+
+# fazendo deploy para hosting do firebase
+firebase deploy --only hosting
+
+echo "-----------------firebase hosting-------------------"

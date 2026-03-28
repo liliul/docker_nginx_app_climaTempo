@@ -20,6 +20,13 @@ Usar o comando:
 yarn # npm install
 ```
 
+### Deploy para firebase hosting
+
+```bash
+npm run deploy:hs
+```
+
+
 ### Iniciando desenvolvimento frontend
 
 ```bash
@@ -36,9 +43,6 @@ export const TOKEN_API_OPEN_WEATHER="";
 
 # usar npm // sass e live-server instalados globalmente
 npm run dev
-
-# para build // build com arquivos estaticos dentro do container docker
-source docker.sh
 
 ```
 

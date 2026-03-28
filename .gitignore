@@ -7,5 +7,6 @@ package-lock.json
 dist
 public
 
+.firebase
 firebase-debug.log
 firebase-debug.*

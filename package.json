@@ -7,7 +7,8 @@
     "dev": "sass -w src/style/sass/index.scss:src/style/css/index.css & live-server --no-browser",
     "webpack": "webpack --watch",
     "wpack": "webpack",
-    "dev:sh": "./dev.sh"
+    "dev:sh": "./dev.sh",
+    "deploy:hs": "./deploy.sh"
   },
   "keywords": [],
   "author": "",
