@@ -1,5 +1,5 @@
 import { LANG, TOKEN_API_OPEN_WEATHER, UNITS, URL_AR, URL_FORECAST, URL_WHEATER } from './env.js';
-import { airQuality, openWeatherMap, sunTime, tempNow, visible, weather } from './htmlRender.js';
+import { airQuality, mostrandoHorarioLocal, openWeatherMap, sunTime, tempNow, visible, weather } from './htmlRender.js';
 
 export const geo = () => {
   if(navigator.geolocation) {
@@ -35,6 +35,7 @@ async function getApis(lat, lon) {
     sunTime(resApi1)   
     openWeatherMap(resApi1)
     weather(resApi3)
+    mostrandoHorarioLocal(resApi1.dt, resApi1.timezone)
 
   } catch (error) {
     console.error("Erro ao buscar dados:", error)   

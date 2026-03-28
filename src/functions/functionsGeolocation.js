@@ -1,4 +1,4 @@
-import { airQuality, openWeatherMap, sunTime, tempNow, visible, weather } from '../hook/htmlRender.js';
+import { airQuality, mostrandoHorarioLocal, openWeatherMap, sunTime, tempNow, visible, weather } from '../hook/htmlRender.js';
 import { URL_AR_FUNCTIONS, URL_FORECAST_FUNCTIONS, URL_WHEATER_FUNCTIONS } from './functionsEnv.js';
 
 export const geo = () => {
@@ -36,6 +36,7 @@ async function getApis(lat, lon) {
     sunTime(resApi1)   
     openWeatherMap(resApi1)
     weather(resApi3)
+    mostrandoHorarioLocal(resApi1.dt, resApi1.timezone)
 
   } catch (error) {
     console.error("Erro ao buscar dados:", error)   
