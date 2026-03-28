@@ -121,7 +121,6 @@ exports.weatherSearch = functions.https.onRequest((req, res) => {
         appid: process.env.OPENWEATHER_API_KEY,
         lang: LANG,
       });
-      console.log(url);
       
       const response = await fetch(url);
       if (!response.ok) throw new Error(`OWM status: ${response.status}`);
@@ -131,6 +130,34 @@ exports.weatherSearch = functions.https.onRequest((req, res) => {
 
     } catch (e) {
       res.status(500).json({ erro: "Erro ao buscar weather", detalhe: e.message });
+    }
+  });
+});
+
+exports.forecastSearch = functions.https.onRequest((req, res) => {
+  cors(req, res, async () => {
+    const params = validarCidade(req, res);
+    if (!params) return;
+
+    const cnt = req.query.cnt ?? 8;
+
+    try {
+      const url = buildUrl("/data/2.5/forecast?q=", {
+        ...params,
+        cnt,
+        appid: process.env.OPENWEATHER_API_KEY,
+        lang: LANG,
+        units: UNITS,
+      });
+      
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`OWM status: ${response.status}`);
+
+      const data = await response.json();
+      res.status(200).json(data);
+
+    } catch (e) {
+      res.status(500).json({ erro: "Erro ao buscar forecast", detalhe: e.message });
     }
   });
 });

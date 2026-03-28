@@ -1,13 +1,13 @@
 import {
+  URL_AR_FUNCTIONS,
+  URL_FORECAST_SEARCH_FUNCTIONS,
   URL_WHEATER_SEARCH_FUNCTIONS
 } from './functionsEnv.js';
 
-
-import { mostrandoHorarioLocal, openWeatherMap, sunTime, tempNow, visible } from '../hook/htmlRender.js';
+import { airQuality, mostrandoHorarioLocal, openWeatherMap, sunTime, tempNow, visible, weather } from '../hook/htmlRender.js';
 
 const inputSearchCity  = document.getElementById('input-search-city');
 const buttonSearchCity = document.getElementById('button-search-city');
-
 
 buttonSearchCity.addEventListener('click', searchCity);
 inputSearchCity.addEventListener('keydown', (e) => {
@@ -16,8 +16,6 @@ inputSearchCity.addEventListener('keydown', (e) => {
     searchCity()
   }
 })
-
-
 
 function searchCity() {
   const cityLowerCase = inputSearchCity.value.toLowerCase();
@@ -32,8 +30,6 @@ function searchCity() {
   inputSearchCity.value = ''
 }
 
-
-
 function toCall() {
   const getItemSearchCity = sessionStorage.getItem("searchCity");
   
@@ -44,8 +40,6 @@ function toCall() {
   
 }
 toCall()
-
-
 
 async function getApi(city) {
   const req = await fetch(`${URL_WHEATER_SEARCH_FUNCTIONS}${city}`)
@@ -58,29 +52,25 @@ async function getApi(city) {
 
   openWeatherMap(res)
 
-  getApiAirQuality(res.coord.lat,res.coord.lon,res.sys.sunrise,res.sys.sunset)
+  getApiAirQuality(res.coord.lat,res.coord.lon)
 
   mostrandoHorarioLocal(res.dt, res.timezone)
 }
 
+async function getApiAirQuality(lat, lon) {
+  const req = fetch(`${URL_AR_FUNCTIONS}lat=${lat}&lon=${lon}`);
+  const res = await (await req).json();
 
+  airQuality(res)
+}
 
-// async function getApiAirQuality(lat, lon,sunrise,sunset) {
-//   const req = fetch(`${URL_AR}lat=${lat}&lon=${lon}&start=${sunrise}&end=${sunset}8&appid=${TOKEN_API_OPEN_WEATHER}&lang=${LANG}`);
-//   const res = await (await req).json();
+async function getApiDaysTemp(city) {
+  const req = await fetch(`${URL_FORECAST_SEARCH_FUNCTIONS}${city}`);
+  const res = await req.json();
 
-//   airQuality(res)
-// }
-
-
-
-// async function getApiDaysTemp(city) {
-//   const req = await fetch(`${URL_FORECAST_SEARCH_FUNCTIONS}${city}&cnt=8&appid=${TOKEN_API_OPEN_WEATHER}&units=${UNITS}&lang=${LANG}`);
-//   const res = await req.json();
-
-//   if(!req.ok) {
-//     throw Error(res.statusText), alert('Nome de cidade Invalida')
-//   }
+  if(!req.ok) {
+    throw Error(res.statusText), alert('Nome de cidade Invalida')
+  }
   
-//   return await weather(res)
-// }
+  return await weather(res)
+}

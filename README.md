@@ -65,11 +65,14 @@ npm run dev:sh
 
 # rodar projeto
 firebase emulators:start
+[GET]
 # devtools em: http://localhost:4000
 # frontend em: http://localhost:5000
 # backend  em: http://127.0.0.1:5001/climatempo-6f654/us-central1/weather?lat=41.85&lon=-87.65
 # backend  em: http://127.0.0.1:5001/climatempo-6f654/us-central1/forecast?lat=41.85&lon=-87.65
 # backend  em: http://127.0.0.1:5001/climatempo-6f654/us-central1/airPollution?lat=41.85&lon=-87.65
+# backend  em: http://127.0.0.1:5001/climatempo-6f654/us-central1/weatherSearch?q=chicago
+# backend  em: http://127.0.0.1:5001/climatempo-6f654/us-central1/forecastSearch?q=chicago
 
 # deploy para firebase
 # envia tudo — Hosting + Functions de uma vez

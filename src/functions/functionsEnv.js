@@ -7,4 +7,4 @@ export const URL_WHEATER_FUNCTIONS  = `${BASE}/weather?`;
 export const URL_FORECAST_FUNCTIONS = `${BASE}/forecast?`;
 export const URL_AR_FUNCTIONS       = `${BASE}/airPollution?`;
 export const URL_WHEATER_SEARCH_FUNCTIONS  = `${BASE}/weatherSearch?q=`;
-export const URL_FORECAST_SEARCH_FUNCTIONS = `${BASE}/forecast?q=`;
+export const URL_FORECAST_SEARCH_FUNCTIONS = `${BASE}/forecastSearch?q=`;
