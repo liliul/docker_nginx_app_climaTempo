@@ -1,29 +1,7 @@
-# Nginx no docker
-
-### Iniciando o projeto
-
 ### Clonar o repositorio:
 
 ```bash
 git clone https://github.com/liliul/docker_nginx_app_climaTempo.git
-```
-
-### Criar env com tokens
-
-```bash
-# criar em src/hook/env.js
-
-export const TOKEN_API_OPEN_WEATHER="";
-export const APPID_TOKEN="&appid=";
-export const LANG="pt_br";
-export const UNITS="metric"
-
-export const URL_API_OPEN_WEATHER_SEARCH ="https://api.openweathermap.org/data/2.5/weather?q=";
-export const URL_AR ="https://api.openweathermap.org/data/2.5/air_pollution?";
-export const URL_WHEATER ="https://api.openweathermap.org/data/2.5/weather?";
-export const URL_FORECAST_SEARCH ="https://api.openweathermap.org/data/2.5/forecast?q=";
-export const URL_FORECAST ="https://api.openweathermap.org/data/2.5/forecast?"
-
 ```
 
 ### Virificar versão do nodejs em .nvmrc
@@ -42,12 +20,48 @@ Usar o comando:
 yarn # npm install
 ```
 
+<<<<<<< HEAD
 ### Iniciar desenvolvimento com functions e hosting
 
 ```bash
+=======
+### Iniciando desenvolvimento frontend
+
+```bash
+
+# inciando desenvolvimento do frontend
+# index.html descomentar js e css e src/index.js comentar import css
+
+# descomentar em src/index.js
+import './hook/api.js';
+import { geo } from './hook/geolocation.js';
+
+# em env.js coloca api key // src/hook/env.js
+export const TOKEN_API_OPEN_WEATHER="";
+
+# usar npm // sass e live-server instalados globalmente
+npm run dev
+
+# para build // build com arquivos estaticos dentro do container docker
+source docker.sh
+
+```
+
+### Iniciar desenvolvimento com functions 
+
+```bash
+# descomontar em src/index.js
+import './functions/functionsApi.js';
+import { geo } from './functions/functionsGeolocation.js';
+
+# colocar api key em functions/.env
+OPENWEATHER_API_KEY=
+>>>>>>> f267afb (update: refactor functions da v2 para v1 e readme)
 
 # antes de rodar o npm autorizar script chmod +x dev.sh
 npm run dev:sh
+# para gerar a build na pasta public em index.html js e css tem que ta comentado
+# em src/index.js no import css descomentado
 
 # rodar projeto
 firebase emulators:start
