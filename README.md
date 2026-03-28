@@ -20,11 +20,6 @@ Usar o comando:
 yarn # npm install
 ```
 
-<<<<<<< HEAD
-### Iniciar desenvolvimento com functions e hosting
-
-```bash
-=======
 ### Iniciando desenvolvimento frontend
 
 ```bash
@@ -47,7 +42,7 @@ source docker.sh
 
 ```
 
-### Iniciar desenvolvimento com functions 
+### Iniciar desenvolvimento com functions e hosting
 
 ```bash
 # descomontar em src/index.js
@@ -56,7 +51,6 @@ import { geo } from './functions/functionsGeolocation.js';
 
 # colocar api key em functions/.env
 OPENWEATHER_API_KEY=
->>>>>>> f267afb (update: refactor functions da v2 para v1 e readme)
 
 # antes de rodar o npm autorizar script chmod +x dev.sh
 npm run dev:sh
@@ -73,6 +67,7 @@ firebase emulators:start
 # backend  em: http://127.0.0.1:5001/climatempo-6f654/us-central1/airPollution?lat=41.85&lon=-87.65
 # backend  em: http://127.0.0.1:5001/climatempo-6f654/us-central1/weatherSearch?q=chicago
 # backend  em: http://127.0.0.1:5001/climatempo-6f654/us-central1/forecastSearch?q=chicago
+
 
 # deploy para firebase
 # envia tudo — Hosting + Functions de uma vez
