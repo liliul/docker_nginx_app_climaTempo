@@ -1,5 +1,4 @@
-const { onRequest } = require("firebase-functions/v2/https");
-const fetch = require("node-fetch");
+const functions = require("firebase-functions");
 const cors = require("cors")({ origin: true });
 
 const BASE_OWM = "https://api.openweathermap.org";
@@ -22,7 +21,7 @@ function validarLatLon(req, res) {
 }
 
 // ── Rota 1: Weather ───────────────────────────────────────────
-exports.weather = onRequest((req, res) => {
+exports.weather = functions.https.onRequest((req, res) => {
   cors(req, res, async () => {
     const params = validarLatLon(req, res);
     if (!params) return;
@@ -47,7 +46,7 @@ exports.weather = onRequest((req, res) => {
 });
 
 // ── Rota 2: Forecast ──────────────────────────────────────────
-exports.forecast = onRequest((req, res) => {
+exports.forecast = functions.https.onRequest((req, res) => {
   cors(req, res, async () => {
     const params = validarLatLon(req, res);
     if (!params) return;
@@ -76,7 +75,7 @@ exports.forecast = onRequest((req, res) => {
 });
 
 // ── Rota 3: Air Pollution ─────────────────────────────────────
-exports.airPollution = onRequest((req, res) => {
+exports.airPollution = functions.https.onRequest((req, res) => {
   cors(req, res, async () => {
     const params = validarLatLon(req, res);
     if (!params) return;

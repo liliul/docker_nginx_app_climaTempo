@@ -30,7 +30,7 @@ export const URL_FORECAST ="https://api.openweathermap.org/data/2.5/forecast?"
 
 Usar .nvmrc:
 
-```zsh
+```bash
 nvm use
 ```
 
@@ -38,13 +38,13 @@ nvm use
 
 Usar o comando:
 
-```zsh
+```bash
 yarn # npm install
 ```
 
-### Iniciar desenvolvimento com functions 
+### Iniciar desenvolvimento com functions e hosting
 
-```zsh
+```bash
 
 # antes de rodar o npm autorizar script chmod +x dev.sh
 npm run dev:sh
