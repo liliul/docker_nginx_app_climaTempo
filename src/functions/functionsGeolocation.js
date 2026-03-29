@@ -16,7 +16,7 @@ async function getApis(lat, lon) {
     const requests = await Promise.all([
       fetch(`${URL_WHEATER_FUNCTIONS}lat=${lat}&lon=${lon}`),
       fetch(`${URL_AR_FUNCTIONS}lat=${lat}&lon=${lon}`),
-      fetch(`${URL_FORECAST_FUNCTIONS}lat=${lat}&lon=${lon}&cnt=8`),
+      fetch(`${URL_FORECAST_FUNCTIONS}lat=${lat}&lon=${lon}`),
 
     ])
 
