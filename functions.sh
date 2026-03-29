@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 # desenvolvimento
-# rm -rf /caminho/da/pasta/*
+rm -rf dist public
 
 # criar pasta dist com bundle webpack
 if [ -x "$(command -v yarn)" ]; then
@@ -42,4 +42,4 @@ distDir=${PWD}/dist/*
 cp -rv $distDir $publicDir
 
 
-echo "-----------------fim-------------------"
+echo "-----------------Functions-------------------"

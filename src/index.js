@@ -1,10 +1,10 @@
 import './style/css/index.css';
 
-// import './functions/functionsApi.js';
-// import { geo } from './functions/functionsGeolocation.js';
+import './functions/functionsApi.js';
+import { geo } from './functions/functionsGeolocation.js';
 
-import './hook/api.js';
-import { geo } from './hook/geolocation.js';
+// import './hook/api.js';
+// import { geo } from './hook/geolocation.js';
 
 import './hook/themes.js';
 
