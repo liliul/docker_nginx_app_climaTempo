@@ -8,7 +8,7 @@
     "webpack": "webpack --watch",
     "wpack": "webpack",
     "dev:fc": "./functions.sh",
-    "dev:hs": "./deploy.sh"
+    "dev:hs": "./hosting.sh"
   },
   "keywords": [],
   "author": "",
