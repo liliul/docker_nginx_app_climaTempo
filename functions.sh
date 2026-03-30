@@ -2,6 +2,7 @@
 
 # desenvolvimento
 rm -rf dist public
+echo "Excluindo pasta dist e public"
 
 # criar pasta dist com bundle webpack
 if [ -x "$(command -v yarn)" ]; then
