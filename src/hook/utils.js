@@ -70,3 +70,7 @@ export function atualizarMapa(map, marker, res) {
     marker = L.marker([res.coord.lat, res.coord.lon]).addTo(map);
   }
 }
+
+export function calcularChuvaPop(list) {
+  return (list * 100).toFixed()
+}

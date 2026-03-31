@@ -1,4 +1,4 @@
-import { atualizarMapa, byId, carregarIcon, convertWindSpeedKm, horarioLocal, kelvinCelsius, timeStamp, visibility } from './utils.js';
+import { atualizarMapa, byId, calcularChuvaPop, carregarIcon, convertWindSpeedKm, horarioLocal, kelvinCelsius, timeStamp, visibility } from './utils.js';
 
 export async function tempNow(res) {
     const iconCode = await carregarIcon(res.weather[0].icon)
@@ -162,8 +162,9 @@ export async function weather(res) {
             </section>
 
             <footer class="foo-days">
-                <p class="foo-p-days">${list.main.temp_max.toFixed()}° <span class="s-foo-days">${convertWindSpeedKm(list.wind.speed).toFixed()}km/h</span></p>
+                <p class="foo-p-days">${list.main.temp_max.toFixed()}° <span class="s-foo-days">${calcularChuvaPop(list.pop)}%</span></p>
             </footer>
+            <small class="foo-data">${convertWindSpeedKm(list.wind.speed).toFixed()}km/h</small>
             <small class="foo-data">${timeStamp(list.dt, timezoneWeather)}</small>
         `
         weather.append(article);
