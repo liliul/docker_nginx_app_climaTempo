@@ -300,7 +300,6 @@ html {
   height: 22px;
 }
 .selectTheme #select {
-  height: 100%;
   background-color: #212121;
   color: #DDD;
   border: none;
@@ -309,7 +308,7 @@ html {
   font-family: "Fira Code", monospace;
   font-size: 1.4rem;
   font-weight: 700;
-  padding: 3px 3px;
+  padding: 3.5px 3.5px;
 }
 .selectTheme #select option {
   font-family: "Fira Code", monospace;

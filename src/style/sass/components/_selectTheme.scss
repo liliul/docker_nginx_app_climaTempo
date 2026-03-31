@@ -15,7 +15,6 @@
     }
 
     #select {
-        height: 100%;
         background-color: #212121;
         color: #DDD;
 
@@ -25,7 +24,7 @@
 
         @include font-14;  
 
-        padding: 3px 3px; 
+        padding: 3.5px 3.5px; 
 
         option {
             @include font-14;
