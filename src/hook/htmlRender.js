@@ -16,10 +16,14 @@ export async function tempNow(res) {
     cityLocate.textContent = res.name + ' ' + res.sys.country;
 
     temp.innerHTML = `
-      <h1 id="temp" class="h1-temp">
-        ${kelvinCelsius(res.main.feels_like).toFixed(0)}
-        <span class="span-temp">°C</span>
-      </h1>
+      <div class="tooltip">
+        <h1 id="temp" class="h1-temp">
+            ${kelvinCelsius(res.main.feels_like).toFixed(0)}
+            <span class="span-temp">°C</span>
+        </h1>
+
+        <span class="tooltip-text">Sensação térmica</span>
+      </div>
     `
 
     tempMaxMix.innerHTML = `
