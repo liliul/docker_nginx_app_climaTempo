@@ -47,7 +47,13 @@ module.exports = {
       }),
       new HtmlWebpackPlugin({
         minify: true,
-        template: './index.html'
+        template: './index.html',
+        filename: 'index.html'
+      }), 
+      new HtmlWebpackPlugin({
+        minify: true,
+        template: './404.html',
+        filename: '404.html'
       }),
       new CleanWebpackPlugin(),
   ],  
