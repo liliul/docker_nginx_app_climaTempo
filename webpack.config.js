@@ -53,7 +53,8 @@ module.exports = {
       new HtmlWebpackPlugin({
         minify: true,
         template: './404.html',
-        filename: '404.html'
+        filename: '404.html',
+        inject: false
       }),
       new CleanWebpackPlugin(),
   ],  
