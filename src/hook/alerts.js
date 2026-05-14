@@ -1,27 +1,41 @@
 import { TOKEN_API_OPEN_WEATHER, URL_FORECAST_SEARCH, UNITS, LANG } from "./env.js";
+import { acessarLocalStorage, guardarNoLocalStorage } from "./localStorage.js";
 
 
-class Message {
-    send(msg) {
-        console.log('Alerta: ', msg)
+class ElementHTML {
+    message() {
+        const temps = acessarLocalStorage('alert:temp')
+        
+        console.log('temp',temps);
+
+        const message = document.createElement('section')
+        const containerDiv = document.createElement('div')
+        
+        const alerts = temps.map(items => {
+            return (`
+                <p>${items.tmp}</p>
+                <span>${items.data}</span>
+            `)
+        })
     } 
 }
 
-class Alert {
+class AlertTemperature {
+    constructor() {
+        this.tempDB = []
+    }
 
     async forecast(city) {
         const temp = await this.fetchGetApiDaysTemp(city)
         
-        let db = []
-
         temp.list.map(weather => {
             if(weather.main.feels_like.toFixed() < 15) {
-                db.push(weather.main.feels_like)
+                this.tempDB.push({tmp: weather.main.feels_like, data: new Date()})
             }
         })
 
-        console.log(db);
-        
+        console.log(this.tempDB);
+        guardarNoLocalStorage('alert:temp', JSON.stringify(this.tempDB))
     }
 
     async fetchGetApiDaysTemp(city) {
@@ -34,7 +48,10 @@ class Alert {
 
         return res
     }
+
 }
 
-const alert = new Alert()
-alert.forecast('paranacity')
+const alertTemperature = new AlertTemperature()
+alertTemperature.forecast('paranacity')
+const elementHTML = new ElementHTML()
+elementHTML.message()
