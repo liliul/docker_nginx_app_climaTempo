@@ -4,8 +4,8 @@ import { acessarLocalStorage, guardarNoLocalStorage } from "./localStorage.js";
 
 class ElementHTML {
     notification() {
-        const temps = acessarLocalStorage('alert:temp')
-        const body = document.querySelector('body')
+        const menu = document.getElementById('menu')
+        const temps = acessarLocalStorage('alert:temp') || []
         
         console.log('temp', temps.length);
 
@@ -23,25 +23,24 @@ class ElementHTML {
         `
         const containerDiv = document.createElement('div')
         containerDiv.setAttribute('id', 'cards-temp')
-        // containerDiv.appendChild('<span class="close-cards">X</span>')
         containerDiv.style.display = 'none'
 
-        const alerts = temps.length === 0 ? '<span>Sem Alerta...</span>' : temps.map(items => {
+        const alerts = temps.length === 0 ? '<span class="alert-fk" >Sem Alerta...</span>' : temps.map(items => {
             return (`
                 <article class='card'>
-                    <b id='close-card-temp'>X</b>
-                    <p>${items.tmp}</p>
-                    <span>${items.data}</span>
+                    <p>tmp: ${items.tmp}°</p>
+                    <small><b>em</b>: ${items.data}</small>
                 </article>
             `)
         }).join('')
 
         containerDiv.innerHTML = `
+            <h1 class='alert-h1'>Alerta de temperatura</h1>
             <section class='container-cards'>${alerts}</section>
         `
         message.appendChild(containerDiv)
 
-        document.getElementById('menu').appendChild(message)
+        menu.appendChild(message)
 
         message.addEventListener('click', (e) => {
             e.stopPropagation()
@@ -53,8 +52,8 @@ class ElementHTML {
             }
         })
 
-        document.addEventListener('click', (event) => {
-            if (!containerDiv.contains(event.target)) {
+        document.addEventListener('click', (e) => {
+            if (!containerDiv.contains(e.target)) {
                 containerDiv.style.display = 'none'
             }
         })
@@ -71,8 +70,23 @@ class AlertTemperature {
         const temp = await this.fetchGetApiDaysTemp(city)
         
         temp.list.map(weather => {
-            if(weather.main.feels_like.toFixed() < 20) {
-                this.tempDB.push({tmp: weather.main.feels_like.toFixed(), data: new Date()})
+            const date = new Date()
+            const temps = weather.main.feels_like.toFixed()
+
+            const formatoData = new Intl.DateTimeFormat('pt-BR', {
+                day: '2-digit',
+                month: 'long',  
+                year: 'numeric',
+                hour: '2-digit',    
+                minute: '2-digit'
+            })
+
+            if(temps < 20) {
+                this.tempDB.push({tmp: temps, data: formatoData.format(date)})
+            }
+
+            if (temps > 21) {
+                this.tempDB.push({tmp: temps, data: formatoData.format(date)})
             }
         })
 
