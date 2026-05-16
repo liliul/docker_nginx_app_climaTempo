@@ -4,6 +4,86 @@ import { calcularChuvaPop, timeStamp } from "./utils.js";
 
 
 export class ElementHTML {
+    constructor(alertContainer) {
+        this.alertContainer = document.getElementById(alertContainer)
+    }
+
+    render() {
+        const tempsAlert = acessarLocalStorage('alert:temp') || []
+        
+        this.alertNotificationTemplate(tempsAlert)
+    }
+
+    alertNotificationTemplate(tempsAlert) {
+        if (!this.alertContainer) return
+
+        const resultTemp = tempsAlert.flatMap(item => item.tmp.map(t => t))
+
+        this.alertContainer.innerHTML = `
+           <section id='notify' class='notification'>
+                <div>
+                    <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="24" height="24" fill="var(--icon-svg-day)" stroke="none" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        <circle cx="19" cy="5" r="3" fill="${resultTemp.length === 0 ? 'var(--icon-svg-day)' : '#ff3b30'}" stroke="none"></circle>
+                    </svg>
+                </div>
+
+                <div id='cards-temp' style='display: none;'>
+                    <h1 class='alert-h1'>Alerta de temperatura</h1>
+                    <section class='container-cards'>
+                        ${resultTemp.length === 0 ? '<span class="alert-fk" >Sem Alerta...</span>' : this.cardAlertTempTemplate(tempsAlert)}
+                    </section>
+                </div>
+           </section>
+        `
+
+        this.eventAlertsOpenCloseCard()
+    }
+
+    cardAlertTempTemplate(tempsAlert) {
+        return tempsAlert.map(items => { 
+            return (`
+                <article class='card'>
+                    <small><b>city</b>: ${items.city} <b>${items.uf}</b></small>
+                    ${items.tmp.map(temps => {
+                        return (`
+                            <div class='cards-temps'>
+                                <small class='temps-small'><b>sensação termica: </b>${temps.newtmp}°</small>
+                                <small class='temps-small'><b>hora: </b>${timeStamp(temps.dt, items.timezone)}</small>
+                                <small class='temps-small'><b>chuva: </b>${calcularChuvaPop(temps.pop)}%</small>
+                            </div> 
+                        `)
+                    }).join('')}
+                    <small><b>em: </b> ${items.created_at}<small>
+                </article>
+                `)
+            }).join('')
+    }
+
+    eventAlertsOpenCloseCard() {
+        const notify = this.alertContainer.querySelector('#notify')
+        const cardTemp = this.alertContainer.querySelector('#cards-temp')
+
+        if (!notify || !cardTemp) return 
+
+        notify.addEventListener('click', (e) => {
+            e.stopPropagation()
+
+            if (cardTemp.style.display === 'none') {
+                cardTemp.style.display = 'block'
+            } else {
+                cardTemp.style.display = 'none'
+            }
+        })
+
+        document.addEventListener('click', (e) => {
+            if (!cardTemp.contains(e.target)) {
+                cardTemp.style.display = 'none'
+            }
+        })
+    }
+
     cardsNotification() {
         document.getElementById('alerts').innerHTML = ''
         const alerts = document.getElementById('alerts')
@@ -77,11 +157,11 @@ export class AlertTemperature {
         this.tempDB = acessarLocalStorage('alert:temp') || []
     }
 
-    async forecast(res) {
-        const resultWeather = res.list.filter(weather => {
+    async temperatureListForecast(response) {
+        const resultWeather = response.list.filter(weather => {
             const temps = parseFloat(weather.main.feels_like.toFixed())
 
-            return temps < 15 || temps > 32
+            return temps <= 15 || temps >= 32
         }).map(weather => {
             const newTemps = parseFloat(weather.main.feels_like.toFixed())
 
@@ -103,36 +183,22 @@ export class AlertTemperature {
         })        
 
         const tempsJson = { 
-            city: res.city.name,
-            uf: res.city.country,
-            timezone: res.city.timezone,
+            city: response.city.name,
+            uf: response.city.country,
+            timezone: response.city.timezone,
             tmp: resultWeather,
             created_at: formatoData.format(date)
         }
 
         this.tempDB = [tempsJson]
-
         guardarNoLocalStorage('alert:temp', JSON.stringify(this.tempDB))
-
-        elementHTML.cardsNotification()
+        elementHTML.render()
     }
 
     updateGetItemLocalStorage() {
         return guardarNoLocalStorage('alert:temp', JSON.stringify(this.tempDB)) || []
     }
-
-    async fetchGetApiDaysTemp(city) {
-        const req = await fetch(`${URL_FORECAST_SEARCH}${city}&cnt=8&appid=${TOKEN_API_OPEN_WEATHER}&units=${UNITS}&lang=${LANG}`);
-        const res = await req.json();
-
-        if(!req.ok) {
-            throw Error(res.statusText), alert('Nome de cidade Invalida')
-        }
-
-        return res
-    }
-
 }
 
-const elementHTML = new ElementHTML()
-elementHTML.cardsNotification()
+const elementHTML = new ElementHTML('alerts')
+elementHTML.render()

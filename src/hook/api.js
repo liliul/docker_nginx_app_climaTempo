@@ -94,7 +94,7 @@ async function getApiDaysTemp(city) {
     throw Error(res.statusText), alert('Nome de cidade Invalida');
   }
 
-  alertTemperature.forecast(res);
+  alertTemperature.temperatureListForecast(res);
   
   return await weather(res)
 }
