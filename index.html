@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clima Tempo</title>
     <link rel="icon" type="image/x-icon" href="/src/assets/favicon.png">
-    <!-- <link rel="stylesheet" href="./src/style/css/index.css"> -->
+    <link rel="stylesheet" href="./src/style/css/index.css">
     <script>
         if (localStorage.TempThemes) {
             document.documentElement.setAttribute('data-theme', localStorage.TempThemes)
@@ -26,8 +26,7 @@
      crossorigin="" defer></script>
 </head>
 <body>
-    <!-- https://www.figma.com/file/AmkCXW1tBWMGQsep1ImDGk/%23boraCodar---Desafio-10-(Community)?node-id=328%3A2&t=UVuDylcdQ3CrrTPP-0 -->
-
+   
     <header class="searchCity">
         <div class="c-input-button">
             <div class="input">
@@ -359,8 +358,10 @@
             <option value="5">geleia</option>
             <option value="6">temaBlack</option>
         </select>
+
+        <div id="alerts"></div>
     </div>
 
-    <!-- <script type="module" src="./src/index.js"></script> -->
+    <script type="module" src="./src/index.js"></script>
 </body>
 </html>

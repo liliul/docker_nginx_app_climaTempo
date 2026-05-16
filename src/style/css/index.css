@@ -318,6 +318,69 @@ html {
   border: none;
   outline: none;
 }
+.selectTheme .notification #cards-temp {
+  position: absolute;
+  right: -10px;
+  padding: 10px;
+  margin-top: 10px;
+  width: 220px;
+  border-radius: 5px;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.selectTheme .notification #cards-temp .alert-h1 {
+  font-family: "Fira Code", monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-city);
+  text-align: center;
+}
+.selectTheme .notification #cards-temp .alert-fk {
+  color: var(--h1-temp);
+  font-family: "Fira Code", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: 8px;
+}
+.selectTheme .notification #cards-temp .container-cards {
+  margin-top: 8px;
+}
+.selectTheme .notification #cards-temp .container-cards .card p {
+  font-family: "Fira Code", monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--h1-temp);
+}
+.selectTheme .notification #cards-temp .container-cards .card small {
+  color: var(--text-city);
+  font-family: "Fira Code", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.selectTheme .notification #cards-temp .container-cards .card .cards-temps {
+  margin: 5px 0px 5px 0px;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.selectTheme .notification #cards-temp .container-cards .card .cards-temps .temps-small {
+  font-family: "Fira Code", monospace;
+  font-size: 1.2em;
+  font-style: normal;
+  font-weight: 400;
+}
+.selectTheme .notification #cards-temp span {
+  color: var(--text-city);
+  font-family: "Fira Code", monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+}
 
 .c-hora-local {
   width: 100%;

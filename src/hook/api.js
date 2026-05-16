@@ -2,6 +2,7 @@
 //  https://openweathermap.org/current#multi
 //  https://home.openweathermap.org/api_keys
 
+import { AlertTemperature, ElementHTML } from './alerts.js';
 import {
   LANG,
   TOKEN_API_OPEN_WEATHER,
@@ -84,12 +85,16 @@ async function getApiAirQuality(lat, lon,sunrise,sunset) {
 
 
 async function getApiDaysTemp(city) {
+  const alertTemperature = new AlertTemperature();
+
   const req = await fetch(`${URL_FORECAST_SEARCH}${city}&cnt=8&appid=${TOKEN_API_OPEN_WEATHER}&units=${UNITS}&lang=${LANG}`);
   const res = await req.json();
 
   if(!req.ok) {
-    throw Error(res.statusText), alert('Nome de cidade Invalida')
+    throw Error(res.statusText), alert('Nome de cidade Invalida');
   }
+
+  alertTemperature.forecast(res);
   
   return await weather(res)
 }

@@ -4,36 +4,10 @@ import { calcularChuvaPop, timeStamp } from "./utils.js";
 
 
 export class ElementHTML {
-    constructor() {
-        // temps = acessarLocalStorage('alert:temp') || []
-    }
-
-    notification() {
-        // const alerts = document.getElementById('alerts')
-
-        // const notify = document.createElement('section')
-        // notify.classList.add('notification')
-        // notify.setAttribute('id', 'notify')
-        // notify.innerHTML = `
-        //    <div>
-        //         <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="24" height="24" fill="var(--icon-svg-day)" stroke="none" stroke-width="2">
-        //             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-        //             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-        //             <circle cx="19" cy="5" r="3" fill="${temps.length === 0 ? 'var(--icon-svg-day)' : '#ff3b30'}" stroke="none"></circle>
-        //         </svg>
-        //    </div>
-
-        // `
-
-        // alerts.appendChild(notify)
-    }
-
     cardsNotification() {
         document.getElementById('alerts').innerHTML = ''
         const alerts = document.getElementById('alerts')
         const temps = acessarLocalStorage('alert:temp') || []
-        
-        this.limitLocalStorage()
         const resultTemp = temps.flatMap(item => item.tmp.map(t => t))
 
         const notify = document.createElement('section')
@@ -96,16 +70,6 @@ export class ElementHTML {
         })
 
     } 
-
-    limitLocalStorage() {
-        const temps = acessarLocalStorage('alert:temp') || []
-        
-        if (temps.length > 25) {
-            localStorage.removeItem('alert:temp')
-            alert('LocalStorage cheio 25 itens limites')
-            return
-        }
-    }
 }
 
 export class AlertTemperature {
@@ -114,7 +78,6 @@ export class AlertTemperature {
     }
 
     async forecast(res) {
-        // const temp = await this.fetchGetApiDaysTemp(res)
         const resultWeather = res.list.filter(weather => {
             const temps = parseFloat(weather.main.feels_like.toFixed())
 
@@ -128,14 +91,6 @@ export class AlertTemperature {
                 dt: weather.dt,
                 dttxt: weather.dt_txt
             } 
-
-            // if(temps < 20 || temps > 21) {
-            //     return temps
-            // }
-            
-            // if (temps > 21) {
-                //     this.tempDB.push({tmp: temps, data: formatoData.format(date)})
-                // }
         })
 
         const date = new Date()
@@ -155,17 +110,11 @@ export class AlertTemperature {
             created_at: formatoData.format(date)
         }
 
-        console.log(tempsJson);
-
-
         this.tempDB = [tempsJson]
-
-        console.log('this', this.tempDB);
 
         guardarNoLocalStorage('alert:temp', JSON.stringify(this.tempDB))
 
         elementHTML.cardsNotification()
-       
     }
 
     updateGetItemLocalStorage() {
@@ -186,7 +135,4 @@ export class AlertTemperature {
 }
 
 const elementHTML = new ElementHTML()
-// elementHTML.notification()
 elementHTML.cardsNotification()
-
-// const alertTemperature = new AlertTemperature()
