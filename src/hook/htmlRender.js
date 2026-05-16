@@ -1,7 +1,10 @@
 import { atualizarMapa, byId, calcularChuvaPop, carregarIcon, convertWindSpeedKm, horarioLocal, kelvinCelsius, timeStamp, visibility } from './utils.js';
 
 export async function tempNow(res) {
-    const iconCode = await carregarIcon(res.weather[0].icon)
+    const thunderstorm = res.weather.find( i => i.icon.startsWith('11'))
+    const checkIconCode = thunderstorm ? thunderstorm.icon : res.weather[0].icon
+    
+    const iconCode = await carregarIcon(checkIconCode)
  
     byId('iconTempNow').innerHTML = `
         ${iconCode}
@@ -146,7 +149,10 @@ export async function weather(res) {
     const timezoneWeather = res.city.timezone;
     const items = await Promise.all(
         res.list.map(async (list) => {
-            const svg = await carregarIcon(list.weather[0].icon);
+            const thunderstorm = list.weather.find( i => i.icon.startsWith('11'));
+            const iconCode = thunderstorm ? thunderstorm.icon : list.weather[0].icon;
+            
+            const svg = await carregarIcon(iconCode);
             return { list, svg };
         })
     );
