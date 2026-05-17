@@ -149,22 +149,21 @@ export async function weather(res) {
     const timezoneWeather = res.city.timezone;
     const items = await Promise.all(
         res.list.map(async (list) => {
-            const thunderstorm = list.weather.find( i => i.icon.startsWith('11'));
-            const iconCode = thunderstorm ? thunderstorm.icon : list.weather[0].icon;
+            const ifReturnThunderstorm = list.weather.find( i => i.icon.startsWith('11')) || list.weather[0];
             
-            const svg = await carregarIcon(iconCode);
-            return { list, svg };
+            const svg = await carregarIcon(ifReturnThunderstorm.icon);
+            return { list, svg, ifReturnThunderstorm };
         })
     );
 
-    items.forEach(({ list, svg }) => {
+    items.forEach(({ list, svg, ifReturnThunderstorm }) => {
 
         const article = document.createElement('article');
         article.classList.add('days');
 
         article.innerHTML = `
             <header class="h-days">
-                <h3 class="h3-days">${list.weather[0].description}</h3>
+                <h3 class="h3-days">${ifReturnThunderstorm.description}</h3>
             </header>
 
             <section class="main-days">
