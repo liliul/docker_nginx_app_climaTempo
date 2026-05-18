@@ -29,10 +29,15 @@ export async function tempNow(res) {
       </div>
     `
 
-    tempMaxMix.innerHTML = `
-        ${kelvinCelsius(res.main.temp_min).toFixed(0)}°
-        <b class="temp-b">${kelvinCelsius(res.main.temp_max).toFixed(0)}°</b>
-    `
+    if (kelvinCelsius(res.main.temp_max).toFixed(0) === kelvinCelsius(res.main.temp_min).toFixed(0)) {
+        tempMaxMix.style.display = 'none';
+    } else {
+        tempMaxMix.style.display = 'block';
+        tempMaxMix.innerHTML = `
+            ${kelvinCelsius(res.main.temp_min).toFixed(0)}°
+            <b class="temp-b">${kelvinCelsius(res.main.temp_max).toFixed(0)}°</b>
+        `
+    }
 
     const windSpeed = document.getElementById('windSpeed');
 
