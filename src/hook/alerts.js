@@ -22,7 +22,7 @@ export class ElementHTML {
         this.alertContainer.innerHTML = `
            <section id='notify' class='notification'>
                 <div>
-                    <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="24" height="24" fill="var(--icon-svg-day)" stroke="none" stroke-width="2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="var(--icon-svg-day)" stroke="none" stroke-width="2">
                         <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
                         <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                         <circle cx="19" cy="5" r="3" fill="${resultTemp.length === 0 ? 'var(--icon-svg-day)' : '#ff3b30'}" stroke="none"></circle>
@@ -55,7 +55,7 @@ export class ElementHTML {
                             </div> 
                         `)
                     }).join('')}
-                    <small><b>em: </b> ${items.created_at}<small>
+                    <small><b>em: </b> ${items.created_at}</small>
                 </article>
                 `)
             }).join('')
