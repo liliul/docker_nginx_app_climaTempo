@@ -1,3 +1,4 @@
+import { AlertTemperature } from './alerts.js';
 import { LANG, TOKEN_API_OPEN_WEATHER, UNITS, URL_AR, URL_FORECAST, URL_WHEATER } from './env.js';
 import { airQuality, mostrandoHorarioLocal, openWeatherMap, sunTime, tempNow, visible, weather } from './htmlRender.js';
 
@@ -11,6 +12,8 @@ export const geo = () => {
 }
 
 async function getApis(lat, lon) {
+  const alertTemperature = new AlertTemperature
+
   try {
 
     const requests = await Promise.all([
@@ -36,6 +39,7 @@ async function getApis(lat, lon) {
     openWeatherMap(resApi1)
     weather(resApi3)
     mostrandoHorarioLocal(resApi1.dt, resApi1.timezone)
+    alertTemperature.temperatureListForecast(resApi3)
 
   } catch (error) {
     console.error("Erro ao buscar dados:", error)   
