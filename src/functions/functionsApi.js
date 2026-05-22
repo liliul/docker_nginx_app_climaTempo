@@ -5,6 +5,7 @@ import {
 } from './functionsEnv.js';
 
 import { airQuality, mostrandoHorarioLocal, openWeatherMap, sunTime, tempNow, visible, weather } from '../hook/htmlRender.js';
+import { AlertTemperature } from '../hook/alerts.js';
 
 const inputSearchCity  = document.getElementById('input-search-city');
 const buttonSearchCity = document.getElementById('button-search-city');
@@ -65,6 +66,8 @@ async function getApiAirQuality(lat, lon) {
 }
 
 async function getApiDaysTemp(city) {
+  const alertTemperature = new AlertTemperature();
+
   const req = await fetch(`${URL_FORECAST_SEARCH_FUNCTIONS}${city}`);
   const res = await req.json();
 
@@ -72,5 +75,7 @@ async function getApiDaysTemp(city) {
     throw Error(res.statusText), alert('Nome de cidade Invalida')
   }
   
+  alertTemperature.temperatureListForecast(res);
+
   return await weather(res)
 }
